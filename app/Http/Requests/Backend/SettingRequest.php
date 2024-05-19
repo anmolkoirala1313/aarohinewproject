@@ -25,10 +25,10 @@ class SettingRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required|string|max:60',
-            'email'         => 'required|email',
-            'whatsapp'      => 'required',
-            'logo_input'    => request()->method() == 'POST' ? 'required':'nullable'.'|image|mimes:jpeg,png,jpg',
+            'title'             => 'required|string|max:60',
+            'email'             => 'required|email',
+            'whatsapp'          => 'required',
+            'logo_input'        => request()->method() == 'POST' ? 'required':'nullable'.'|image|mimes:jpeg,png,jpg',
         ];
     }
 

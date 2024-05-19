@@ -70,287 +70,80 @@
 		"nextArrow": "<button class=\"hero-slider__slick-button hero-slider__slick-button--next\">Next <i class=\"icon-right-arrow\"><i></button>"
 
 	}'>
-            <div class="main-slider-two__item">
-                <div class="main-slider-two__bg" style="background-image: url(assets/images/backgrounds/slider-2-1.jpg);"></div>
-                <!-- /.main-slider-two__bg -->
-                <div class="main-slider-two__wrapper container">
-                    <div class="main-slider-two__left">
-                        <div class="main-slider-two__content">
-                            <p class="main-slider-two__tagline">Welcome to floens tiles & flooring</p>
-                            <!-- /.main-slider-two__tagline -->
-                            <h2 class="main-slider-two__title">Precision Tiles <br> & best Flooring Solutions</h2>
-                            <!-- /.main-slider-two__title -->
-                            <a href="about.html" class="main-slider-two__btn floens-btn">
-                                <span>discover more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.main-slider-two__btn floens-btn -->
-                        </div><!-- /.main-slider-two__content -->
-                    </div><!-- /.main-slider-two__left -->
-                    <div class="main-slider-two__right">
-                        <div class="main-slider-two__image">
-                            <div class="main-slider-two__image__one">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-1.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__tiles">
-                                    <div class="main-slider-two__tiles__circle"></div>
-                                    <!-- /.main-slider-two__tiles__circle -->
-                                    <h5 class="main-slider-two__tiles__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__tiles__title -->
-                                </div><!-- /.main-slider-two__tiles -->
-                            </div><!-- /.main-slider-two__image__one -->
-                            <div class="main-slider-two__image__two">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-2.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__shape">
-                                    <div class="main-slider-two__shape__circle"></div>
-                                    <!-- /.main-slider-two__shape__circle -->
-                                    <h5 class="main-slider-two__shape__title">modern tiles</h5>
-                                </div><!-- /.main-slider-two__tilses -->
-                            </div><!-- /.main-slider-two__image__two -->
-                        </div><!-- /.main-slider-two__image -->
-                    </div><!-- /.main-slider-two__right -->
-                </div><!-- /.main-slider-two__wrapper .container -->
-            </div><!-- /.main-slider-two__item -->
-            <div class="main-slider-two__item">
-                <div class="main-slider-two__bg" style="background-image: url(assets/images/backgrounds/slider-2-2.jpg);"></div>
-                <!-- /.main-slider-two__bg -->
-                <div class="main-slider-two__wrapper container">
-                    <div class="main-slider-two__left">
-                        <div class="main-slider-two__content">
-                            <p class="main-slider-two__tagline">Welcome to floens tiles & flooring</p>
-                            <!-- /.main-slider-two__tagline -->
-                            <h2 class="main-slider-two__title">Precision Tiles <br> & best Flooring Solutions</h2>
-                            <!-- /.main-slider-two__title -->
-                            <a href="about.html" class="main-slider-two__btn floens-btn">
-                                <span>discover more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.main-slider-two__btn floens-btn -->
-                        </div><!-- /.main-slider-two__content -->
-                    </div><!-- /.main-slider-two__left -->
-                    <div class="main-slider-two__right">
-                        <div class="main-slider-two__image">
-                            <div class="main-slider-two__image__one">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-1.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__tiles">
-                                    <div class="main-slider-two__tiles__circle"></div>
-                                    <!-- /.main-slider-two__tiles__circle -->
-                                    <h5 class="main-slider-two__tiles__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__tiles__title -->
-                                </div><!-- /.main-slider-two__tiles -->
-                            </div><!-- /.main-slider-two__image__one -->
-                            <div class="main-slider-two__image__two">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-2.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__shape">
-                                    <div class="main-slider-two__shape__circle"></div>
-                                    <h5 class="main-slider-two__shape__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__shape__circle -->
-                                </div><!-- /.main-slider-two__tilses -->
-                            </div><!-- /.main-slider-two__image__two -->
-                        </div><!-- /.main-slider-two__image -->
-                    </div><!-- /.main-slider-two__right -->
-                </div><!-- /.main-slider-two__wrapper .container -->
-            </div><!-- /.main-slider-two__item -->
-            <div class="main-slider-two__item">
-                <div class="main-slider-two__bg" style="background-image: url(assets/images/backgrounds/slider-2-3.jpg);"></div>
-                <!-- /.main-slider-two__bg -->
-                <div class="main-slider-two__wrapper container">
-                    <div class="main-slider-two__left">
-                        <div class="main-slider-two__content">
-                            <p class="main-slider-two__tagline">Welcome to floens tiles & flooring</p>
-                            <!-- /.main-slider-two__tagline -->
-                            <h2 class="main-slider-two__title">Precision Tiles <br> & best Flooring Solutions</h2>
-                            <!-- /.main-slider-two__title -->
-                            <a href="about.html" class="main-slider-two__btn floens-btn">
-                                <span>discover more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.main-slider-two__btn floens-btn -->
-                        </div><!-- /.main-slider-two__content -->
-                    </div><!-- /.main-slider-two__left -->
-                    <div class="main-slider-two__right">
-                        <div class="main-slider-two__image">
-                            <div class="main-slider-two__image__one">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-1.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__tiles">
-                                    <div class="main-slider-two__tiles__circle"></div>
-                                    <!-- /.main-slider-two__tiles__circle -->
-                                    <h5 class="main-slider-two__tiles__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__tiles__title -->
-                                </div><!-- /.main-slider-two__tiles -->
-                            </div><!-- /.main-slider-two__image__one -->
-                            <div class="main-slider-two__image__two">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-2.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__shape">
-                                    <div class="main-slider-two__shape__circle"></div>
-                                    <h5 class="main-slider-two__shape__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__shape__circle -->
-                                </div><!-- /.main-slider-two__tilses -->
-                            </div><!-- /.main-slider-two__image__two -->
-                        </div><!-- /.main-slider-two__image -->
-                    </div><!-- /.main-slider-two__right -->
-                </div><!-- /.main-slider-two__wrapper .container -->
-            </div><!-- /.main-slider-two__item -->
-            <div class="main-slider-two__item">
-                <div class="main-slider-two__bg" style="background-image: url(assets/images/backgrounds/slider-2-4.jpg);"></div>
-                <!-- /.main-slider-two__bg -->
-                <div class="main-slider-two__wrapper container">
-                    <div class="main-slider-two__left">
-                        <div class="main-slider-two__content">
-                            <p class="main-slider-two__tagline">Welcome to floens tiles & flooring</p>
-                            <!-- /.main-slider-two__tagline -->
-                            <h2 class="main-slider-two__title">Precision Tiles <br> & best Flooring Solutions</h2>
-                            <!-- /.main-slider-two__title -->
-                            <a href="about.html" class="main-slider-two__btn floens-btn">
-                                <span>discover more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.main-slider-two__btn floens-btn -->
-                        </div><!-- /.main-slider-two__content -->
-                    </div><!-- /.main-slider-two__left -->
-                    <div class="main-slider-two__right">
-                        <div class="main-slider-two__image">
-                            <div class="main-slider-two__image__one">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-1.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__tiles">
-                                    <div class="main-slider-two__tiles__circle"></div>
-                                    <!-- /.main-slider-two__tiles__circle -->
-                                    <h5 class="main-slider-two__tiles__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__tiles__title -->
-                                </div><!-- /.main-slider-two__tiles -->
-                            </div><!-- /.main-slider-two__image__one -->
-                            <div class="main-slider-two__image__two">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-2.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__shape">
-                                    <div class="main-slider-two__shape__circle"></div>
-                                    <h5 class="main-slider-two__shape__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__shape__circle -->
-                                </div><!-- /.main-slider-two__tilses -->
-                            </div><!-- /.main-slider-two__image__two -->
-                        </div><!-- /.main-slider-two__image -->
-                    </div><!-- /.main-slider-two__right -->
-                </div><!-- /.main-slider-two__wrapper .container -->
-            </div><!-- /.main-slider-two__item -->
-            <div class="main-slider-two__item">
-                <div class="main-slider-two__bg" style="background-image: url(assets/images/backgrounds/slider-2-5.jpg);"></div>
-                <!-- /.main-slider-two__bg -->
-                <div class="main-slider-two__wrapper container">
-                    <div class="main-slider-two__left">
-                        <div class="main-slider-two__content">
-                            <p class="main-slider-two__tagline">Welcome to floens tiles & flooring</p>
-                            <!-- /.main-slider-two__tagline -->
-                            <h2 class="main-slider-two__title">Precision Tiles <br> & best Flooring Solutions</h2>
-                            <!-- /.main-slider-two__title -->
-                            <a href="about.html" class="main-slider-two__btn floens-btn">
-                                <span>discover more</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.main-slider-two__btn floens-btn -->
-                        </div><!-- /.main-slider-two__content -->
-                    </div><!-- /.main-slider-two__left -->
-                    <div class="main-slider-two__right">
-                        <div class="main-slider-two__image">
-                            <div class="main-slider-two__image__one">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-1.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__tiles">
-                                    <div class="main-slider-two__tiles__circle"></div>
-                                    <!-- /.main-slider-two__tiles__circle -->
-                                    <h5 class="main-slider-two__tiles__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__tiles__title -->
-                                </div><!-- /.main-slider-two__tiles -->
-                            </div><!-- /.main-slider-two__image__one -->
-                            <div class="main-slider-two__image__two">
-                                <div class="main-slider-two__image__inner">
-                                    <img src="assets/images/slider/slider-2-2.jpg" alt="slider">
-                                </div><!-- /.main-slider-two__image__inner -->
-                                <div class="main-slider-two__shape">
-                                    <div class="main-slider-two__shape__circle"></div>
-                                    <h5 class="main-slider-two__shape__title">modern tiles</h5>
-                                    <!-- /.main-slider-two__shape__circle -->
-                                </div><!-- /.main-slider-two__tilses -->
-                            </div><!-- /.main-slider-two__image__two -->
-                        </div><!-- /.main-slider-two__image -->
-                    </div><!-- /.main-slider-two__right -->
-                </div><!-- /.main-slider-two__wrapper .container -->
-            </div><!-- /.main-slider-two__item -->
+            @foreach($data['sliders']  as $index=>$slider)
+
+                @php [$remaining, $last] = splitWordsFromEnd($slider->subtitle, 3);
+                @endphp
+                <div class="main-slider-two__item">
+                    <div class="main-slider-two__bg" style="background-image: url({{ asset(imagePath($slider->image)) }});"></div>
+                    <!-- /.main-slider-two__bg -->
+                    <div class="main-slider-two__wrapper container">
+                        <div class="main-slider-two__left">
+                            <div class="main-slider-two__content">
+                                <p class="main-slider-two__tagline">{{ $slider->title ?? '' }}</p>
+                                <!-- /.main-slider-two__tagline -->
+                                <h2 class="main-slider-two__title">{{ $slider->subtitle  ?? ''}}</h2>
+                                @if($slider->link)
+                                    <a href="{{ $slider->link ?? '' }}" class="main-slider-two__btn floens-btn">
+                                        <span>  {{ $slider->button ?? 'Learn More' }}</span>
+                                        <i class="icon-right-arrow"></i>
+                                    </a>
+                                @endif
+                            </div><!-- /.main-slider-two__content -->
+                        </div><!-- /.main-slider-two__left -->
+                    </div><!-- /.main-slider-two__wrapper .container -->
+                </div>
+            @endforeach
         </div><!-- /.my-slider -->
     </section><!-- /.main-slider-two -->
     <!-- main slider end -->
 
-    <!-- testimonial start -->
-    <div class="client-carousel client-carousel--two">
-        <div class="container">
-            <div class="client-carousel__one floens-owl__carousel owl-theme owl-carousel" data-owl-options='{
-            "items": 5,
-            "margin": 65,
-            "smartSpeed": 700,
-            "loop":true,
-            "autoplay": 6000,
-            "nav":false,
-            "dots":false,
-            "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-            "responsive":{
-                "0":{
-                    "items": 2,
-                    "margin": 30
-                },
-                "500":{
-                    "items": 3,
-                    "margin": 40
-                },
-                "768":{
-                    "items": 4,
-                    "margin": 50
-                },
-                "992":{
-                    "items": 5,
-                    "margin": 70
-                },
-                "1200":{
-                    "items": 6,
-                    "margin": 149
+    @if(count( $data['clients']) > 0)
+        <div class="client-carousel client-carousel--two">
+            <div class="container">
+                <div class="client-carousel__one floens-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                "items": 5,
+                "margin": 45,
+                "smartSpeed": 700,
+                "loop":true,
+                "autoplay": 6000,
+                "nav":false,
+                "dots":false,
+                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                "responsive":{
+                    "0":{
+                        "items": 2,
+                        "margin": 30
+                    },
+                    "500":{
+                        "items": 3,
+                        "margin": 40
+                    },
+                    "768":{
+                        "items": 4,
+                        "margin": 50
+                    },
+                    "992":{
+                        "items": 5,
+                        "margin": 70
+                    },
+                    "1200":{
+                        "items": 5,
+                        "margin": 129
+                    }
                 }
-            }
-            }'>
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-1.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-2.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-3.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-4.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-5.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img src="assets/images/resources/brand-1-6.png" alt="brand">
-                </div><!-- /.owl-slide-item-->
-            </div><!-- /.thm-owl__slider -->
-        </div><!-- /.container -->
-    </div><!-- /.client-carousel -->
-    <!-- testimonial end -->
+                }'>
+                    @foreach($data['clients'] as $index=>$client)
+                        <div class="client-carousel__one__item">
+                            <img src="{{ asset(imagePath($client->image)) }}" alt="">
+                        </div>
+                    @endforeach
+                </div>
+            </div><!-- /.container -->
+        </div>
+    @endif
 
-    <!-- services start -->
+
     <section class="services-two section-space-two">
         <div class="container">
             <div class="services-two__top">
@@ -520,84 +313,33 @@
             </div><!-- /.services-two__carousel -->
         </div><!-- /.container-fluid -->
     </section><!-- /.services-two section-space-two -->
-    <!-- services end -->
 
-    <!-- about start -->
-    <section class="about-two section-space">
-        <div class="about-two__bg" style="background-image: url(assets/images/backgrounds/about-bg-2-1.png);"></div>
-        <!-- /.about-two__bg -->
-        <div class="container">
-            <div class="row gutter-y-60">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="about-two__image">
-                        <div class="about-two__image__inner">
-                            <img src="assets/images/about/about-2-1.jpg" alt="about" class="about-two__image__one">
-                            <div class="about-two__image__inner__inner">
-                                <img src="assets/images/about/about-2-2.jpg" alt="about" class="about-two__image__two">
-                            </div><!-- /.about-two__image__inner__inner -->
-                            <div class="experience about-two__experience">
-                                <div class="experience__inner">
-                                    <h3 class="experience__year" style="background-image: url('assets/images/shapes/reliable-shape-1-1.png');">25
-                                    </h3>
-                                    <!-- /.experience__year -->
-                                    <p class="experience__text">years of <br> experience</p>
-                                    <!-- /.experience__text -->
-                                </div><!-- /.experience__inner -->
-                            </div><!-- /.experience -->
-                        </div><!-- /.about-two__image__inner -->
-                    </div><!-- /.about-two__image-grid -->
-                </div><!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="about-two__content">
-                        <div class="sec-title sec-title--border">
-
-                            <h6 class="sec-title__tagline">about us</h6><!-- /.sec-title__tagline -->
-
-                            <h3 class="sec-title__title">Best Flooring & <br> Paving Company</h3><!-- /.sec-title__title -->
-                        </div><!-- /.sec-title -->
+    @if($data['homepage']->description)
+        <section class="about-two section-space">
+            <div class="about-two__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/about-bg-2-1.png') }});"></div>
+            <!-- /.about-two__bg -->
+            <div class="container">
+                <div class="row gutter-y-60">
+                    <div class="col-lg-6 {{ $data['homepage']->image_position == 'left' ? 'wow fadeInLeft':'' }}" data-wow-duration="1500ms" data-wow-delay="00ms">
+                        @if($data['homepage']->image_position == 'left')
+                            @include($module.'partials.welcome_image')
+                        @else
+                            @include($module.'partials.welcome_description')
+                        @endif
+                    </div>
+                    <div class="col-lg-6 {{ $data['homepage']->image_position == 'right' ? 'wow fadeInLeft':'' }}" data-wow-duration="1500ms" data-wow-delay="00ms">
+                        @if($data['homepage']->image_position == 'right')
+                            @include($module.'partials.welcome_image')
+                        @else
+                            @include($module.'partials.welcome_description')
+                        @endif
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section>
+    @endif
 
 
-                        <div class="about-two__content__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                            <h5 class="about-two__text-title">We’re providing the best quality tiles in town.</h5>
-                            <!-- /.about-two__text-title -->
-                            <p class="about-two__text">Etiam sit amet felis dapibus libero mollis scelerisque. Vivamus purus
-                                neque, euismod a sodales et, semper ac eros. Nullam vitae augue varius, fringilla libero id,
-                                mattis odio. Aliquam vitae risus dapibus</p><!-- /.about-two__text -->
-                        </div><!-- /.about-two__content__text -->
-                        <div class="about-two__list wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                            <div class="about-two__list__left">
-                                <div class="about-two__list__item">
-                                    <span class="icon-tick"></span>
-                                    More Expensive
-                                </div>
-                                <div class="about-two__list__item">
-                                    <span class="icon-tick"></span>
-                                    Less Maintenance
-                                </div>
-                            </div><!-- /.about-two__list__left -->
-                            <div class="about-two__list__right">
-                                <div class="about-two__list__item">
-                                    <span class="icon-tick"></span>
-                                    Heat-Resistant
-                                </div>
-                                <div class="about-two__list__item">
-                                    <span class="icon-tick"></span>
-                                    Elegant Vein Patterns
-                                </div>
-                            </div><!-- /.about-two__list__right -->
-                        </div><!-- /.about-two__list -->
-                        <div class="about-two__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                            <a href="about.html" class="floens-btn">
-                                <span>more about us</span>
-                                <i class="icon-right-arrow"></i>
-                            </a><!-- /.floens-btn -->
-                        </div><!-- /.about-two__button -->
-                    </div><!-- /.about-two__content -->
-                </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.about-two section-space -->
-    <!-- about end -->
 
     <!-- expertise start -->
     <section class="expertise-one section-space">
