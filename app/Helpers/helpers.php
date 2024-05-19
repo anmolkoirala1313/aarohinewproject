@@ -200,21 +200,21 @@ if (!function_exists('core_value_icon')) {
         if($index == 0){
             $icon = 'icon-hand-protect';
         }else if($index == 1){
-            $icon = 'icon-hand-team';
+            $icon = 'icon-059-review';
         }else if($index == 2){
-            $icon = 'icon-gear-collect';
+            $icon = 'icon-cooperation';
         }else if($index == 3){
-            $icon = 'icon-hand-tick';
+            $icon = 'icon-briefcase';
         }else if($index == 4){
-            $icon = 'icon-lamp-earth';
+            $icon = 'icon-028-meeting';
         }else if($index == 5){
-            $icon = 'icon-hand-message';
+            $icon = 'icon-046-trust';
         }else if($index == 6){
-            $icon = 'icon-woman';
+            $icon = 'icon-lamp-earth';
         }else if($index == 7){
-            $icon = 'icon-risk-management';
+            $icon = 'icon-gear-collect';
         }else{
-            $icon = 'icon-icon-years-experience';
+            $icon = 'icon-genius';
         }
 
         return $icon;

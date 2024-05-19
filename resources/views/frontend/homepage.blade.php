@@ -315,127 +315,271 @@
         </section>
     @endif
 
-    <!-- services start -->
-    <section class="services-one">
-        <div class="services-one__bg" style="background-image: url(assets/images/backgrounds/services-bg-1.png);"></div>
-        <!-- /.services-one__bg -->
-        <div class="container">
-            <div class="services-one__top">
-                <div class="row gutter-y-50 align-items-center">
-                    <div class="col-lg-7 col-md-10">
-                        <div class="sec-title @@extraClassName">
-                            <h6 class="sec-title__tagline">categories</h6>
-                            <h3 class="sec-title__title">We Provides Best Categories For You</h3>
-                        </div>
-                    </div><!-- /.col-lg-7 -->
-                    <div class="col-lg-5">
-                        <div class="services-one__top__button">
-                            <a href="{{ route('frontend.service.index') }}" class="floens-btn services-one__top__btn">
-                                <span>view all</span>
-                                <i class="icon-right-arrow"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid services-one__container">
-            <div class="services-one__carousel floens-owl__carousel floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
-                "items": 1,
-                "margin": 0,
-                "loop": true,
-                "smartSpeed": 700,
-                "stagePadding": 100,
-                "nav": false,
-                "navText": ["<span class=\"icon-slide-left-arrow\"></span>","<span class=\"icon-slide-right-arrow\"></span>"],
-                "dots": false,
-                "autoplay": 600,
-                "responsive":{
-                    "0":{
-                        "items": 1,
-                        "stagePadding": 0,
-                        "margin": 15
-                    },
-                    "530":{
-                        "items": 1,
-                        "stagePadding": 70,
-                        "margin": 30
-                    },
-                    "576":{
-                        "items": 1,
-                        "stagePadding": 110,
-                        "margin": 30
-                    },
-                    "768":{
-                        "items": 2,
-                        "stagePadding": 50,
-                        "margin": 30
-                    },
-                    "992":{
-                        "items": 2,
-                        "stagePadding": 110,
-                        "margin": 30
-                    },
-                    "1200":{
-                        "items": 2,
-                        "stagePadding": 200,
-                        "margin": 30
-                    },
-                    "1400":{
-                        "items": 3,
-                        "stagePadding": 130,
-                        "margin": 30
-                    },
-                    "1600":{
-                        "items": 3,
-                        "stagePadding": 260,
-                        "margin": 30
-                    },
-                    "1830":{
-                        "items": 3,
-                        "stagePadding": 375,
-                        "margin": 30
-                    }
-                }
-            }'>
-                @foreach($data['services'] as $index=>$service)
-                    <div class="item">
-                        <div class="service-card">
-                            <div class="service-card__bg"></div><!-- /.service-card__bg -->
-                            <div class="service-card__top">
-                                <div class="service-card__image">
-                                    <img src="{{ asset(thumbnailImagePath($service->image)) }}" alt="">
-                                </div><!-- /.service-card__image -->
-                                <div class="service-card__icon">
-                                    <span class="icon-tile"></span>
-                                </div><!-- /.service-card__icon -->
-                            </div><!-- /.service-card__top -->
-                            <div class="service-card__content">
-                                <h3 class="service-card__title">
-                                    <a href='{{ route('frontend.service.show', $service->key) }}'>
-                                        {{ $service->title ?? '' }}</a>
-                                </h3>
-                                <p class="service-card__text">
-                                   {{ elipsis( strip_tags($service->description) ) }}</p>
-                                <a href='{{ route('frontend.service.show', $service->key) }}' class="service-card__btn floens-btn floens-btn--border">
-                                    <span>service details</span>
+    @if(count($data['services']) > 0)
+        <section class="services-one">
+            <div class="services-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/services-bg-1.png') }});"></div>
+            <div class="container">
+                <div class="services-one__top">
+                    <div class="row gutter-y-50 align-items-center">
+                        <div class="col-lg-7 col-md-10">
+                            <div class="sec-title @@extraClassName">
+                                <h6 class="sec-title__tagline">categories</h6>
+                                <h3 class="sec-title__title">We Provides Best Categories For You</h3>
+                            </div>
+                        </div><!-- /.col-lg-7 -->
+                        <div class="col-lg-5">
+                            <div class="services-one__top__button">
+                                <a href="{{ route('frontend.service.index') }}" class="floens-btn services-one__top__btn">
+                                    <span>view all</span>
                                     <i class="icon-right-arrow"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
-            <div class="services-one__cursor">
-                <i class="icon-arrow-left"></i>
-                <span class="services-one__cursor__text">DRAG</span>
-                <i class="icon-arrow-right"></i>
+            <div class="container-fluid services-one__container">
+                <div class="services-one__carousel floens-owl__carousel floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
+                    "items": 1,
+                    "margin": 0,
+                    "loop": true,
+                    "smartSpeed": 700,
+                    "stagePadding": 100,
+                    "nav": false,
+                    "navText": ["<span class=\"icon-slide-left-arrow\"></span>","<span class=\"icon-slide-right-arrow\"></span>"],
+                    "dots": false,
+                    "autoplay": 600,
+                    "responsive":{
+                        "0":{
+                            "items": 1,
+                            "stagePadding": 0,
+                            "margin": 15
+                        },
+                        "530":{
+                            "items": 1,
+                            "stagePadding": 70,
+                            "margin": 30
+                        },
+                        "576":{
+                            "items": 1,
+                            "stagePadding": 110,
+                            "margin": 30
+                        },
+                        "768":{
+                            "items": 2,
+                            "stagePadding": 50,
+                            "margin": 30
+                        },
+                        "992":{
+                            "items": 2,
+                            "stagePadding": 110,
+                            "margin": 30
+                        },
+                        "1200":{
+                            "items": 2,
+                            "stagePadding": 200,
+                            "margin": 30
+                        },
+                        "1400":{
+                            "items": 3,
+                            "stagePadding": 130,
+                            "margin": 30
+                        },
+                        "1600":{
+                            "items": 3,
+                            "stagePadding": 260,
+                            "margin": 30
+                        },
+                        "1830":{
+                            "items": 3,
+                            "stagePadding": 375,
+                            "margin": 30
+                        }
+                    }
+                }'>
+                    @foreach($data['services'] as $index=>$service)
+                        <div class="item">
+                            <div class="service-card">
+                                <div class="service-card__bg"></div>
+                                <div class="service-card__top">
+                                    <div class="service-card__image">
+                                        <img src="{{ asset(thumbnailImagePath($service->image)) }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">
+                                        <a href='{{ route('frontend.service.show', $service->key) }}'>
+                                            {{ $service->title ?? '' }}</a>
+                                    </h3>
+                                    <p class="service-card__text">
+                                       {{ elipsis( strip_tags($service->description) ) }}</p>
+                                    <a href='{{ route('frontend.service.show', $service->key) }}' class="service-card__btn floens-btn floens-btn--border">
+                                        <span>service details</span>
+                                        <i class="icon-right-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="services-one__cursor">
+                    <i class="icon-arrow-left"></i>
+                    <span class="services-one__cursor__text">DRAG</span>
+                    <i class="icon-arrow-right"></i>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if(count($data['homepage']->coreValueDetail))
+        <section class="pricing-page section-space" style="padding-bottom: 70px;">
+            @php [$remaining, $last] = splitWordsFromEnd($data['homepage']->core_title, 3);
+            @endphp
+        <div class="container">
+            <div class="sec-title sec-title--center">
+                <h6 class="sec-title__tagline">   {{ $data['homepage']->core_subtitle ?? '' }}</h6>
+                <h3 class="sec-title__title">{{ $remaining ?? '' }} <br/> {{ $last ?? '' }}</h3><!-- /.sec-title__title -->
+            </div>
+            <div class="pricing-page__main-tab-box tabs-box">
+                <div class="row gutter-y-30 fadeInUp animated" data-wow-delay="200ms">
+                    @foreach($data['homepage']->coreValueDetail as $index=>$core_value)
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                            <div class="pricing-card">
+                                <div class="pricing-card__top">
+                                    <div class="pricing-card__top__content" style="text-align: center;">
+                                        <span class="service-card-two__icon {{ core_value_icon($index) }}"></span>
+                                        <h2 class="pricing-card__title">{{ $core_value->title ?? '' }}</h2>
+                                    </div>
+                                    <div class="pricing-card__top__bg" style="background-image: url({{ asset('assets/frontend/images/pricing/pricing-t-bg-1-2.jpg') }});">
+                                    </div>
+                                </div>
+                                <div class="pricing-card__content h-100">
+                                    <p class="pricing-card__text pricing-card__list text-align-justify">
+                                        {{ $core_value->description ?? '' }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>
-    <!-- services end -->
+    @endif
 
-    <!-- expertise start -->
+    @if($data['homepage']->action_title)
+        <section class="services-one__info">
+            <div class="container">
+                <div class="services-one__info__inner" style="background-color: #98928f">
+                    <div class="services-one__info__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/cta-1.png') }});"></div>
+                    <div class="row gutter-y-40 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="services-one__info__left">
+                                <h3 class="services-one__info__title">{{ $data['homepage']->action_title ?? '' }}</h3>
+                                <p class="services-one__info__text">{{ $data['homepage']->action_subtitle ?? '' }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-one__info__right">
+                                <div class="services-one__info__right__inner">
+                                    <div class="services-one__info__icon">
+                                        <a href="tel:{{ $data['setting']->phone ?? $data['setting']->mobile ?? '' }}">
+                                            <span class="icon-telephone" style="line-height: 1.5;"></span>
+                                        </a>
+                                    </div>
+                                    @if ( $data['homepage']->action_link )
+                                        <a href="{{ $data['homepage']->action_link }}" class="projects-one__btn floens-btn floens-btn--border">
+                                            <span>{{ $data['homepage']->action_button ?? 'Contact Us' }}</span>
+                                            <i class="icon-right-arrow"></i>
+                                        </a>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-one__info__shape-one"></div>
+                    <div class="services-one__info__shape-two"></div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- work-process start -->
+    <section class="work-process section-space-two" style="padding-top: 50px;">
+        <div class="work-process__container-top container">
+            <div class="sec-title sec-title--center">
+
+                <h6 class="sec-title__tagline">work process</h6><!-- /.sec-title__tagline -->
+
+                <h3 class="sec-title__title">Steps of Recruitment <br> Work Process</h3><!-- /.sec-title__title -->
+            </div><!-- /.sec-title -->
+
+
+        </div><!-- /.container -->
+        <div class="work-process__container container">
+            <div class="row gutter-y-40">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                    <div class="work-process__item work-process__item--one">
+                        <div class="work-process__image">
+                            <div class="work-process__image__inner">
+                                <img src="assets/images/work-process/work-process-1-1.png" alt="Color Board">
+                            </div><!-- /.work-process__image__inner -->
+                        </div>
+                        <div class="work-process__content">
+                            <h4 class="work-process__title">Color Board</h4>
+                            <span class="work-process__step">step 01</span>
+                        </div><!-- /.work-process__content -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                    <div class="work-process__item work-process__item--two">
+                        <div class="work-process__image">
+                            <div class="work-process__image__inner">
+                                <img src="assets/images/work-process/work-process-1-2.png" alt="Dimension">
+                            </div>
+                        </div><!-- /.work-process__image -->
+                        <div class="work-process__content">
+                            <h4 class="work-process__title">Dimension</h4><!-- /.work-process__title -->
+                            <span class="work-process__step">step 02</span><!-- /.work-process__step -->
+                        </div><!-- /.work-process__content -->
+                    </div><!-- /.work-process__item -->
+                </div><!-- /.col-lg-3 col-sm-6 -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                    <div class="work-process__item work-process__item--three">
+                        <div class="work-process__image">
+                            <div class="work-process__image__inner">
+                                <img src="assets/images/work-process/work-process-1-3.png" alt="Installation">
+                            </div><!-- /.work-process__image__inner -->
+                        </div><!-- /.work-process__image -->
+                        <div class="work-process__content">
+                            <h4 class="work-process__title">Installation</h4><!-- /.work-process__title -->
+                            <span class="work-process__step">step 03</span><!-- /.work-process__step -->
+                        </div><!-- /.work-process__content -->
+                    </div><!-- /.work-process__item -->
+                </div><!-- /.col-lg-3 col-sm-6 -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
+                    <div class="work-process__item work-process__item--four">
+                        <div class="work-process__image">
+                            <div class="work-process__image__inner">
+                                <img src="assets/images/work-process/work-process-1-4.png" alt="Finishing">
+                            </div><!-- /.work-process__image__inner -->
+                        </div><!-- /.work-process__image -->
+                        <div class="work-process__content">
+                            <h4 class="work-process__title">Finishing</h4><!-- /.work-process__title -->
+                            <span class="work-process__step">step 04</span><!-- /.work-process__step -->
+                        </div><!-- /.work-process__content -->
+                    </div><!-- /.work-process__item -->
+                </div><!-- /.col-lg-3 col-sm-6 -->
+            </div><!-- /.row -->
+            <img data-src="{{ asset('assets/frontend/images/shapes/work-process-shape-1-3.png') }}" alt="" class="work-process__shape-three lazy">
+        </div><!-- /.container -->
+        <div class="work-process__shapes">
+            <img data-src="{{asset('assets/frontend/images/shapes/work-process-shape-1-1.png')}}" alt="" class="work-process__shape-one lazy">
+            <img data-src="{{asset('assets/frontend/images/shapes/work-process-shape-1-2.png')}}" alt="" class="work-process__shape-two lazy">
+        </div>
+    </section>
+
+
     <section class="expertise-one section-space">
         <div class="container">
             <div class="row gutter-y-50">

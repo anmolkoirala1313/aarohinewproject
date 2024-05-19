@@ -11892,7 +11892,7 @@ li:hover .sidebar__comments__icon::after {
 }
 .pricing-card__top {
   position: relative;
-  padding: 30px 40px 31px;
+  padding: 30px 40px 22px;
   overflow: hidden;
 }
 @media (max-width: 1199px) {
@@ -12004,7 +12004,7 @@ li:hover .sidebar__comments__icon::after {
   color: var(--floens-white, #ffffff);
 }
 .pricing-card:hover .pricing-card__text {
-  color: var(--floens-gray, #DED8D3);
+  color: #b2aeab;
 }
 .pricing-card__content {
   position: relative;
@@ -12037,7 +12037,7 @@ li:hover .sidebar__comments__icon::after {
   list-style: none;
   padding: 36px 40px 33px;
   border-top: 1px solid var(--floens-border-color, #DED8D3);
-  border-bottom: 1px solid var(--floens-border-color, #DED8D3);
+  /*border-bottom: 1px solid var(--floens-border-color, #DED8D3);*/
   z-index: 1;
 }
 @media (max-width: 1199px) {
@@ -13270,7 +13270,7 @@ li:hover .sidebar__comments__icon::after {
   z-index: 1;
 }
 .service-card__image {
-  width: calc(100% - 100px);
+  width: calc(100% - 0px);
   flex-shrink: 0;
 }
 @media (max-width: 412px) {
@@ -13470,7 +13470,7 @@ li:hover .sidebar__comments__icon::after {
   position: relative;
   background-color: var(--floens-black2, #2B1E16);
   padding-top: 110px;
-  padding-bottom: 216px;
+  padding-bottom: 60px;
 }
 @media (max-width: 767px) {
   .services-one {
@@ -13591,7 +13591,7 @@ li:hover .sidebar__comments__icon::after {
 .services-one__info {
   position: relative;
   z-index: 1;
-  margin-top: -216px;
+  margin-bottom: 30px;
 }
 .services-one__info__inner {
   position: relative;
@@ -13690,7 +13690,7 @@ li:hover .sidebar__comments__icon::after {
     font-size: 22px;
   }
 }
-.services-one__info__right:hover .services-one__info__icon span {
+.services-one__info__right:hover .services-one__info__icon a span{
   -webkit-animation-name: wobble-horizontal-hover;
   animation-name: wobble-horizontal-hover;
   -webkit-animation-duration: 1s;
