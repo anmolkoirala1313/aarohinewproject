@@ -143,176 +143,89 @@
         </div>
     @endif
 
-
-    <section class="services-two section-space-two">
-        <div class="container">
-            <div class="services-two__top">
-                <div class="row gutter-y-50 align-items-center">
-                    <div class="col-lg-8 col-md-10">
-                        <div class="sec-title @@extraClassName">
-
-                            <h6 class="sec-title__tagline">services</h6><!-- /.sec-title__tagline -->
-
-                            <h3 class="sec-title__title">We Provides Best florring Services for you</h3><!-- /.sec-title__title -->
-                        </div><!-- /.sec-title -->
-
-
-                    </div><!-- /.col-lg-8 -->
-                </div><!-- /.row -->
-            </div><!-- /.services-two__top -->
-        </div><!-- /.container -->
-        <div class="container-fluid">
-            <div class="services-two__carousel floens-owl__carousel floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
-			"items": 1,
-			"margin": 0,
-			"loop": true,
-			"smartSpeed": 700,
-			"nav": true,
-			"navText": ["<span class=\"icon-slide-left-arrow\"></span>","<span class=\"icon-slide-right-arrow\"></span>"],
-			"dots": false,
-			"autoplay": 600,
-			"responsive":{
-                "0":{
+    @if(count($data['jobs']) > 0)
+        <section class="services-two section-space-two">
+            <div class="container">
+                <div class="services-two__top">
+                    <div class="row gutter-y-50 align-items-center">
+                        <div class="col-lg-8 col-md-10">
+                            <div class="sec-title @@extraClassName">
+                                <h6 class="sec-title__tagline">demands</h6>
+                                <h3 class="sec-title__title">We Provides Best Jobs Demands for you</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="services-two__carousel floens-owl__carousel floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
                     "items": 1,
-                    "margin": 15
-                },
-				"576":{
-                    "items": 1,
-                    "margin": 15
-                },
-                "768":{
-                    "items": 2,
-                    "margin": 30
-                },
-                "992":{
-                    "items": 2,
-                    "margin": 30
-                },
-                "1200":{
-                    "items": 3,
-                    "margin": 30
-                },
-                "1400":{
-                    "items": 3,
-                    "margin": 30
-                },
-                "1600":{
-                    "items": 4,
-                    "margin": 30
-                }
-			}
-		}'>
-                <div class="item">
-                    <div class="service-card-two">
-                        <div class="service-card-two__bg" style="background-image: url('assets/images/services/service-bg-2-1.png');"></div><!-- /.service-card-two__bg -->
-                        <div class="service-card-two__image">
-                            <img src="assets/images/services/service-2-1.jpg" alt="Tiling & concrete">
-                        </div><!-- /.service-card-two__image -->
-                        <div class="service-card-two__content">
-                            <h3 class="service-card-two__title"><a href='service-d-tiling-concrete.html'>Tiling & concrete</a></h3><!-- /.service-card-two__title -->
-                            <div class="service-card-two__bottom">
-                                <a href='service-d-tiling-concrete.html' class="service-card-two__link floens-btn">
-                                    <span>service details</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                                <span class="service-card-two__icon icon-tile"></span>
-                            </div><!-- /.service-card-two__bottom -->
-                        </div><!-- /.service-card-two__content -->
-                    </div><!-- /.service-card-two -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="service-card-two">
-                        <div class="service-card-two__bg" style="background-image: url('assets/images/services/service-bg-2-1.png');"></div><!-- /.service-card-two__bg -->
-                        <div class="service-card-two__image">
-                            <img src="assets/images/services/service-2-2.jpg" alt="Industrial Flooring">
-                        </div><!-- /.service-card-two__image -->
-                        <div class="service-card-two__content">
-                            <h3 class="service-card-two__title"><a href='service-d-industrial-flooring.html'>Industrial Flooring</a></h3><!-- /.service-card-two__title -->
-                            <div class="service-card-two__bottom">
-                                <a href='service-d-industrial-flooring.html' class="service-card-two__link floens-btn">
-                                    <span>service details</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                                <span class="service-card-two__icon icon-parquet"></span>
-                            </div><!-- /.service-card-two__bottom -->
-                        </div><!-- /.service-card-two__content -->
-                    </div><!-- /.service-card-two -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="service-card-two">
-                        <div class="service-card-two__bg" style="background-image: url('assets/images/services/service-bg-2-1.png');"></div><!-- /.service-card-two__bg -->
-                        <div class="service-card-two__image">
-                            <img src="assets/images/services/service-2-3.jpg" alt="Vinyl Plank">
-                        </div><!-- /.service-card-two__image -->
-                        <div class="service-card-two__content">
-                            <h3 class="service-card-two__title"><a href='service-d-vinyl-plank.html'>Vinyl Plank</a></h3><!-- /.service-card-two__title -->
-                            <div class="service-card-two__bottom">
-                                <a href='service-d-vinyl-plank.html' class="service-card-two__link floens-btn">
-                                    <span>service details</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                                <span class="service-card-two__icon icon-tiles"></span>
-                            </div><!-- /.service-card-two__bottom -->
-                        </div><!-- /.service-card-two__content -->
-                    </div><!-- /.service-card-two -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="service-card-two">
-                        <div class="service-card-two__bg" style="background-image: url('assets/images/services/service-bg-2-1.png');"></div><!-- /.service-card-two__bg -->
-                        <div class="service-card-two__image">
-                            <img src="assets/images/services/service-2-4.jpg" alt="Carpets & rugs">
-                        </div><!-- /.service-card-two__image -->
-                        <div class="service-card-two__content">
-                            <h3 class="service-card-two__title"><a href='service-d-carpets-rugs.html'>Carpets & rugs</a></h3><!-- /.service-card-two__title -->
-                            <div class="service-card-two__bottom">
-                                <a href='service-d-carpets-rugs.html' class="service-card-two__link floens-btn">
-                                    <span>service details</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                                <span class="service-card-two__icon icon-carpet"></span>
-                            </div><!-- /.service-card-two__bottom -->
-                        </div><!-- /.service-card-two__content -->
-                    </div><!-- /.service-card-two -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="service-card-two">
-                        <div class="service-card-two__bg" style="background-image: url('assets/images/services/service-bg-2-1.png');"></div><!-- /.service-card-two__bg -->
-                        <div class="service-card-two__image">
-                            <img src="assets/images/services/service-2-5.jpg" alt="Oak Flooring">
-                        </div><!-- /.service-card-two__image -->
-                        <div class="service-card-two__content">
-                            <h3 class="service-card-two__title"><a href='service-d-oak-flooring.html'>Oak Flooring</a></h3><!-- /.service-card-two__title -->
-                            <div class="service-card-two__bottom">
-                                <a href='service-d-oak-flooring.html' class="service-card-two__link floens-btn">
-                                    <span>service details</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                                <span class="service-card-two__icon icon-wood-board"></span>
-                            </div><!-- /.service-card-two__bottom -->
-                        </div><!-- /.service-card-two__content -->
-                    </div><!-- /.service-card-two -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="service-card-two">
-                        <div class="service-card-two__bg" style="background-image: url('assets/images/services/service-bg-2-1.png');"></div><!-- /.service-card-two__bg -->
-                        <div class="service-card-two__image">
-                            <img src="assets/images/services/service-2-6.jpg" alt="Vein Patterns">
-                        </div><!-- /.service-card-two__image -->
-                        <div class="service-card-two__content">
-                            <h3 class="service-card-two__title"><a href='service-d-vein-patterns.html'>Vein Patterns</a></h3><!-- /.service-card-two__title -->
-                            <div class="service-card-two__bottom">
-                                <a href='service-d-vein-patterns.html' class="service-card-two__link floens-btn">
-                                    <span>service details</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                                <span class="service-card-two__icon icon-stones"></span>
-                            </div><!-- /.service-card-two__bottom -->
-                        </div><!-- /.service-card-two__content -->
-                    </div><!-- /.service-card-two -->
-                </div><!-- /.item -->
-            </div><!-- /.services-two__carousel -->
-        </div><!-- /.container-fluid -->
-    </section><!-- /.services-two section-space-two -->
+                    "margin": 0,
+                    "loop": true,
+                    "smartSpeed": 700,
+                    "nav": true,
+                    "navText": ["<span class=\"icon-slide-left-arrow\"></span>","<span class=\"icon-slide-right-arrow\"></span>"],
+                    "dots": false,
+                    "autoplay": 600,
+                    "responsive":{
+                        "0":{
+                            "items": 1,
+                            "margin": 15
+                        },
+                        "576":{
+                            "items": 1,
+                            "margin": 15
+                        },
+                        "768":{
+                            "items": 2,
+                            "margin": 30
+                        },
+                        "992":{
+                            "items": 2,
+                            "margin": 30
+                        },
+                        "1200":{
+                            "items": 3,
+                            "margin": 30
+                        },
+                        "1400":{
+                            "items": 3,
+                            "margin": 30
+                        },
+                        "1600":{
+                            "items": 4,
+                            "margin": 30
+                        }
+                    }
+                }'>
+                    @foreach($data['jobs'] as $index=>$job)
+                        <div class="item">
+                            <div class="service-card-two">
+                                <div class="service-card-two__bg" style="background-image: url({{asset('assets/frontend/images/services/service-bg-2-1.png')}});"></div>
+                                <div class="service-card-two__image">
+                                    <img src="{{ asset(imagePath($job->image)) }}" alt="" style="width: 390px; height: 305px; object-fit: cover">
+                                </div><!-- /.service-card-two__image -->
+                                <div class="service-card-two__content">
+                                    <h3 class="service-card-two__title">
+                                        <a href='{{ route('frontend.job.show', $job->slug) }}'>
+                                            {{ $job->title ?? '' }}
+                                        </a>
+                                    </h3><!-- /.service-card-two__title -->
+                                    <div class="service-card-two__bottom">
+                                        <a href='{{ route('frontend.job.show', $job->slug) }}' class="service-card-two__link floens-btn">
+                                            <span>demand details</span>
+                                            <i class="icon-right-arrow"></i>
+                                        </a>
+                                        <span class="service-card-two__icon icon-newspaper1"></span>
+                                    </div><!-- /.service-card-two__bottom -->
+                                </div><!-- /.service-card-two__content -->
+                            </div><!-- /.service-card-two -->
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
     @if($data['homepage']->description)
         <section class="about-two section-space">
@@ -339,7 +252,188 @@
         </section>
     @endif
 
+    @if($data['homepage']->mission)
+        <section class="offer-one section-space-two" id="offer">
+            <div class="container">
+                <div class="offer-one__top">
+                    <div class="row gutter-y-40 align-items-center">
+                        <div class="col-lg-8">
+                            <div class="sec-title @@extraClassName">
+                                <h6 class="sec-title__tagline">Up Close</h6>
+                                <h3 class="sec-title__title">Discover Our Moral Values And Ethics
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="offer-one__main-tab-box tabs-box">
+                    <div class="offer-one__main-tab-box__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/background-2.png') }});"></div>
+                    <div class="tab-box-buttons wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <ul class="tab-buttons">
+                            <li data-tab="#ourMission" class="tab-btn active-btn">
+                                <button type="button" class="tab-btn__inner">Mission <span class="tab-btn__icon icon-right-arrow"></span></button>
+                            </li>
+                            <li data-tab="#ourVisionValue" class="tab-btn">
+                                <button type="button" class="tab-btn__inner">Vision & Value <span class="tab-btn__icon icon-right-arrow"></span></button>
+                            </li>
+                            <li data-tab="#ourPEtheics" class="tab-btn">
+                                <button type="button" class="tab-btn__inner">Professional Ethics <span class="tab-btn__icon icon-right-arrow"></span></button>
+                            </li>
+                        </ul><!-- /.tab-buttons -->
+                    </div><!-- /.tab-box-buttons -->
+                    <div class="tabs-content wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div class="tab active-tab fadeInUp animated" data-wow-delay="200ms" id="ourMission" style="display: block;">
+                            <div class="offer-one__service">
+                                <div class="offer-one__service__content">
+                                    <h3 class="offer-one__service__title">Mission</h3>
+                                    <p class="offer-one__service__text">
+                                        {{ $data['homepage']->mission ?? '' }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab fadeInUp animated" data-wow-delay="200ms" id="ourVisionValue">
+                            <div class="offer-one__service">
+                                <div class="offer-one__service__content">
+                                    <h3 class="offer-one__service__title">Vision & Value </h3>
+                                    <p class="offer-one__service__text"> {{ $data['homepage']->vision ?? '' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab fadeInUp animated" data-wow-delay="200ms" id="ourPEtheics">
+                            <div class="offer-one__service">
+                                <div class="offer-one__service__content">
+                                    <h3 class="offer-one__service__title">Professional Ethics </h3>
+                                    <p class="offer-one__service__text"> {{ $data['homepage']->value ?? '' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- services start -->
+    <section class="services-one">
+        <div class="services-one__bg" style="background-image: url(assets/images/backgrounds/services-bg-1.png);"></div>
+        <!-- /.services-one__bg -->
+        <div class="container">
+            <div class="services-one__top">
+                <div class="row gutter-y-50 align-items-center">
+                    <div class="col-lg-7 col-md-10">
+                        <div class="sec-title @@extraClassName">
+                            <h6 class="sec-title__tagline">categories</h6>
+                            <h3 class="sec-title__title">We Provides Best Categories For You</h3>
+                        </div>
+                    </div><!-- /.col-lg-7 -->
+                    <div class="col-lg-5">
+                        <div class="services-one__top__button">
+                            <a href="{{ route('frontend.service.index') }}" class="floens-btn services-one__top__btn">
+                                <span>view all</span>
+                                <i class="icon-right-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid services-one__container">
+            <div class="services-one__carousel floens-owl__carousel floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
+                "items": 1,
+                "margin": 0,
+                "loop": true,
+                "smartSpeed": 700,
+                "stagePadding": 100,
+                "nav": false,
+                "navText": ["<span class=\"icon-slide-left-arrow\"></span>","<span class=\"icon-slide-right-arrow\"></span>"],
+                "dots": false,
+                "autoplay": 600,
+                "responsive":{
+                    "0":{
+                        "items": 1,
+                        "stagePadding": 0,
+                        "margin": 15
+                    },
+                    "530":{
+                        "items": 1,
+                        "stagePadding": 70,
+                        "margin": 30
+                    },
+                    "576":{
+                        "items": 1,
+                        "stagePadding": 110,
+                        "margin": 30
+                    },
+                    "768":{
+                        "items": 2,
+                        "stagePadding": 50,
+                        "margin": 30
+                    },
+                    "992":{
+                        "items": 2,
+                        "stagePadding": 110,
+                        "margin": 30
+                    },
+                    "1200":{
+                        "items": 2,
+                        "stagePadding": 200,
+                        "margin": 30
+                    },
+                    "1400":{
+                        "items": 3,
+                        "stagePadding": 130,
+                        "margin": 30
+                    },
+                    "1600":{
+                        "items": 3,
+                        "stagePadding": 260,
+                        "margin": 30
+                    },
+                    "1830":{
+                        "items": 3,
+                        "stagePadding": 375,
+                        "margin": 30
+                    }
+                }
+            }'>
+                @foreach($data['services'] as $index=>$service)
+                    <div class="item">
+                        <div class="service-card">
+                            <div class="service-card__bg"></div><!-- /.service-card__bg -->
+                            <div class="service-card__top">
+                                <div class="service-card__image">
+                                    <img src="{{ asset(thumbnailImagePath($service->image)) }}" alt="">
+                                </div><!-- /.service-card__image -->
+                                <div class="service-card__icon">
+                                    <span class="icon-tile"></span>
+                                </div><!-- /.service-card__icon -->
+                            </div><!-- /.service-card__top -->
+                            <div class="service-card__content">
+                                <h3 class="service-card__title">
+                                    <a href='{{ route('frontend.service.show', $service->key) }}'>
+                                        {{ $service->title ?? '' }}</a>
+                                </h3>
+                                <p class="service-card__text">
+                                   {{ elipsis( strip_tags($service->description) ) }}</p>
+                                <a href='{{ route('frontend.service.show', $service->key) }}' class="service-card__btn floens-btn floens-btn--border">
+                                    <span>service details</span>
+                                    <i class="icon-right-arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="services-one__cursor">
+                <i class="icon-arrow-left"></i>
+                <span class="services-one__cursor__text">DRAG</span>
+                <i class="icon-arrow-right"></i>
+            </div>
+        </div>
+    </section>
+    <!-- services end -->
 
     <!-- expertise start -->
     <section class="expertise-one section-space">
