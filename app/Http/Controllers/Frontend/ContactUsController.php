@@ -57,7 +57,7 @@ class ContactUsController extends BackendBaseController
         try {
             CustomerInquiry::create($request->all());
 
-            if(!app()->environment('local')){
+            if(!app()->environment('local') && $data['setting_data']->email){
                 Mail::to($data['setting_data']->email)->send(new ContactDetail($data));
             }
 

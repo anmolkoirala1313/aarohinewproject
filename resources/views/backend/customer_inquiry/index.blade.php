@@ -43,7 +43,7 @@
                                                 @include($view_path.'includes.status_display',['status'=>$row->status])
                                             </td>
                                             <td>
-                                                @include($module.'includes.dataTable_action',['params'=>['id'=>$row->id,'base_route'=>$base_route]])
+                                                @include($view_path.'includes.dataTable_action',['params'=>['id'=>$row->id,'base_route'=>$base_route]])
                                             </td>
                                         </tr>
                                     @endforeach

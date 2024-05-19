@@ -19,9 +19,9 @@ class CustomerInquiryController extends BackendBaseController
 {
     use ControllerOps;
     protected string $module        = 'backend.';
-    protected string $base_route    = 'backend.customer-inquiry.';
+    protected string $base_route    = 'backend.customer_inquiry.';
     protected string $view_path     = 'backend.customer_inquiry.';
-    protected string $page         = 'Customer Inquiry';
+    protected string $page          = 'Customer Inquiry';
     protected string $folder_name   = 'customer_inquiry';
     protected string $page_title, $page_method, $image_path, $file_path;
     protected object $model;

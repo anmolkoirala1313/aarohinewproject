@@ -602,52 +602,50 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <form class="contact-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" action="https://bracketweb.com/floens-html/inc/sendemail.php">
+                    {!! Form::open(['route' => $module.'contact-us.store', 'method'=>'POST', 'class'=>'contact-one__form contact-form-validated form-one wow fadeInUp submit_form','novalidate'=>'novalidate']) !!}
                         <div class="contact-one__form__bg" style="background-image: url({{ asset('assets/frontend/images/shapes/contact-info-form-bg.png') }});"></div>
                         <div class="contact-one__form__top">
                             <h2 class="contact-one__form__title">Get In Touch With Us And Get <br>
                                 Consultation Support</h2>
                         </div>
                         <div class="form-one__group form-one__group--grid">
-                            {!! Form::open(['route' => $module.'contact-us.store', 'method'=>'POST', 'class'=>'submit_form','novalidate'=>'novalidate']) !!}
-                                <div class="form-one__control form-one__control--input form-one__control--full">
-                                    <input type="text" name="name" placeholder="Your name" required>
-                                </div>
-                                <div class="form-one__control form-one__control--full">
-                                    <input type="email" name="email" placeholder="your email">
-                                </div>
-                                <div class="form-one__control form-one__control--input form-one__control--full">
-                                    <input type="text" name="company_name" placeholder="Company name" required>
-                                </div>
-                                <div class="form-one__control form-one__control--input form-one__control--full">
-                                    <input type="text" name="designation" placeholder="Designation" required>
-                                </div>
-                                <div class="form-one__control form-one__control--input form-one__control--full">
-                                    <input type="text" name="phone" placeholder="Contact Number" required>
-                                </div>
-    {{--                            <div class="form-one__control form-one__control--full">--}}
-    {{--                                <select class="selectpicker" aria-label="Choose service">--}}
-    {{--                                    <option selected>Choose service</option>--}}
-    {{--                                    <option value="1">Tiling & concrete</option>--}}
-    {{--                                    <option value="2">Industrial Flooring</option>--}}
-    {{--                                    <option value="3">Vinyl Plank</option>--}}
-    {{--                                    <option value="4">Carpets & rugs</option>--}}
-    {{--                                    <option value="5">Oak Flooring</option>--}}
-    {{--                                    <option value="6">Vein Patterns</option>--}}
-    {{--                                </select>--}}
-    {{--                            </div>--}}
-                                <div class="form-one__control form-one__control--mesgae form-one__control--full">
-                                    <textarea name="message" placeholder="Write message"></textarea>
-                                </div>
-                                <div class="form-one__control form-one__control--full">
-                                    <button type="submit" class="floens-btn">
+                            <div class="form-one__control form-one__control--input form-one__control--full">
+                                <input type="text" name="name" id="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-one__control form-one__control--full">
+                                <input type="email" name="email" id="email" placeholder="your email">
+                            </div>
+                            <div class="form-one__control form-one__control--input form-one__control--full">
+                                <input type="text" name="company_name" id="company_name" placeholder="Company name" required>
+                            </div>
+                            <div class="form-one__control form-one__control--input form-one__control--full">
+                                <input type="text" name="designation" id="designation" placeholder="Designation" required>
+                            </div>
+                            <div class="form-one__control form-one__control--input form-one__control--full">
+                                <input type="text" name="phone" id="phone" placeholder="Contact Number" required>
+                            </div>
+{{--                            <div class="form-one__control form-one__control--full">--}}
+{{--                                <select class="selectpicker" aria-label="Choose service">--}}
+{{--                                    <option selected>Choose service</option>--}}
+{{--                                    <option value="1">Tiling & concrete</option>--}}
+{{--                                    <option value="2">Industrial Flooring</option>--}}
+{{--                                    <option value="3">Vinyl Plank</option>--}}
+{{--                                    <option value="4">Carpets & rugs</option>--}}
+{{--                                    <option value="5">Oak Flooring</option>--}}
+{{--                                    <option value="6">Vein Patterns</option>--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+                            <div class="form-one__control form-one__control--mesgae form-one__control--full">
+                                <textarea name="message" placeholder="Write message"></textarea>
+                            </div>
+                            <div class="form-one__control form-one__control--full">
+                                    <button type="submit" class="floens-btn" id="submit-quick-inquiry">
                                         <span>send message</span>
                                         <i class="icon-right-arrow"></i>
                                     </button>
                                 </div>
-                            {!! Form::close() !!}
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
@@ -1381,11 +1379,11 @@
 @endsection
 
 @section('js')
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{asset('assets/common/general.js')}}"></script>
+    <script src="{{asset('assets/backend/js/jquery-ui.min.js')}}"></script>
 
+    @include($module.'includes.toast_alert')
     <script>
-        $('.select2').select2();
-
         $(document).ready(function () {
             let popup2 = "{{$data['setting']->popup_image}}";
 
