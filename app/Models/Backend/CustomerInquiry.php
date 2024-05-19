@@ -13,6 +13,6 @@ class CustomerInquiry extends BackendBaseModel
     use HasFactory;
 
     protected $table    ='customer_inquiries';
-    protected $fillable = ['id','name','email','phone','subject','type','message','status'];
+    protected $fillable = ['id','name','email','phone','subject','designation','company_name','type','message','status'];
 
 }

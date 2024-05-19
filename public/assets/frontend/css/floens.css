@@ -13061,6 +13061,7 @@ li:hover .sidebar__comments__icon::after {
   background-color: var(--floens-white2, #F2EEEA);
   border-radius: 50%;
   margin-bottom: 13px;
+    margin-left: 22px;
 }
 @media (max-width: 1199px) {
   .work-process__image {
@@ -13158,8 +13159,8 @@ li:hover .sidebar__comments__icon::after {
   width: 100%;
   max-width: 1011px;
   position: absolute;
-  top: 20%;
-  left: 50%;
+    top: 15%;
+    left: 48%;
   transform: translateX(-50%);
   animation: moveBottom 2s linear infinite;
 }

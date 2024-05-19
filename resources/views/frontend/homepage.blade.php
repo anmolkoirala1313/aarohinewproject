@@ -504,81 +504,156 @@
         </section>
     @endif
 
-    <!-- work-process start -->
-    <section class="work-process section-space-two" style="padding-top: 50px;">
-        <div class="work-process__container-top container">
-            <div class="sec-title sec-title--center">
-
-                <h6 class="sec-title__tagline">work process</h6><!-- /.sec-title__tagline -->
-
-                <h3 class="sec-title__title">Steps of Recruitment <br> Work Process</h3><!-- /.sec-title__title -->
-            </div><!-- /.sec-title -->
-
-
-        </div><!-- /.container -->
-        <div class="work-process__container container">
-            <div class="row gutter-y-40">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="work-process__item work-process__item--one">
-                        <div class="work-process__image">
-                            <div class="work-process__image__inner">
-                                <img src="assets/images/work-process/work-process-1-1.png" alt="Color Board">
-                            </div><!-- /.work-process__image__inner -->
+    @if(count($data['homepage']->recruitmentProcess))
+        <section class="work-process section-space-two" style="padding-top: 50px;">
+            <div class="work-process__container-top container">
+                <div class="sec-title sec-title--center">
+                    <h6 class="sec-title__tagline">{{ $data['homepage']->recruitment_subtitle  ?? ''}}</h6>
+                    <h3 class="sec-title__title">{{  $data['homepage']->recruitment_title ?? ''}}</h3>
+                </div>
+            </div>
+            <div class="work-process__container container">
+                <div class="row gutter-y-40">
+                    @foreach($data['homepage']->recruitmentProcess as $index=>$process)
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="{{ $index * 2 }}00ms">
+                            <div class="work-process__item work-process__item--one">
+                                <div class="work-process__image">
+                                    <div class="work-process__image__inner">
+                                        <img src="{{ asset(imagePath($process->icon)) }}" alt="Color Board">
+                                    </div><!-- /.work-process__image__inner -->
+                                </div>
+                                <div class="work-process__content">
+                                    <h4 class="work-process__title">{{ $process->title ?? '' }}</h4>
+                                    <span class="work-process__step mt-2">step {{ $index < 9 ? '0'.($index+1): ($index+1) }}</span>
+                                    <p class="service-card__text mt-2">
+                                        {{ $process->description ?? '' }}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="work-process__content">
-                            <h4 class="work-process__title">Color Board</h4>
-                            <span class="work-process__step">step 01</span>
-                        </div><!-- /.work-process__content -->
+                    @endforeach
+                </div>
+                <img data-src="{{ asset('assets/frontend/images/shapes/work-process-shape-1-3.png') }}" alt="" class="work-process__shape-three lazy">
+            </div>
+            <div class="work-process__shapes">
+                <img data-src="{{asset('assets/frontend/images/shapes/work-process-shape-1-1.png')}}" alt="" class="work-process__shape-one lazy">
+                <img data-src="{{asset('assets/frontend/images/shapes/work-process-shape-1-2.png')}}" alt="" class="work-process__shape-two lazy">
+            </div>
+        </section>
+    @endif
+
+    <section class="contact-one section-space">
+        <div class="contact-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/contact-bg-1.png') }});"></div>
+        <div class="container">
+            <div class="row gutter-y-40">
+                <div class="col-lg-6">
+                    <div class="contact-one__content">
+                        <div class="sec-title sec-title--border">
+                            <h6 class="sec-title__tagline">contact</h6>
+                            <h3 class="sec-title__title">Free consultation for<br> recruitment process
+                            </h3>
+                        </div>
+                        <p class="contact-one__text text-align-justify">
+                            Our deep understanding of the enterprise psyche, coupled with multi-dimensional analytical technique enables us to assess
+                            issues and suggest solution approaches in alignment with a global vision.
+                            We look forward in achieving more success and fulfilling our mission towards our valued clients across the Globe, keeping in mind the high standards of quality service through professionalism, ethics and accuracy.
+                        </p>
+                        <div class="contact-one__info wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <div class="contact-one__info__bg" style="background-image: url({{ asset('assets/frontend/images/shapes/contact-info-bg.png') }});"></div>
+                            <div class="contact-one__info__content">
+                                <div class="contact-one__info__item">
+                                    <div class="contact-one__info__item__inner">
+                                        <div class="contact-one__info__icon">
+                                            <span class="icon-phone-call"></span>
+                                        </div>
+                                        <p class="contact-one__info__text">
+                                            <a href="tel:{{ $data['setting']->mobile ?? $data['setting']->phone ?? '' }}">
+                                                {{ $data['setting']->mobile ?? $data['setting']->phone ?? '' }}
+                                            </a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-one__info__item">
+                                    <div class="contact-one__info__item__inner">
+                                        <div class="contact-one__info__icon">
+                                            <span class="icon-paper-plane"></span>
+                                        </div>
+                                        <p class="contact-one__info__text">
+                                            <a href="mailto:{{ $data['setting']->email ?? '' }}">
+                                                {{ $data['setting']->email ?? '' }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contact-one__info__item">
+                                    <div class="contact-one__info__item__inner">
+                                        <div class="contact-one__info__icon">
+                                            <span class="icon-location"></span>
+                                        </div>
+                                        <address class="contact-one__info__text">
+                                            <a href="mailto:{{ $data['setting']->email ?? '' }}">
+                                                {{ $data['setting']->address ?? '' }}
+                                            </a>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            <img data-src="{{ asset('assets/frontend/images/shapes/contact-shape-1-1.png') }}" alt="" class="contact-one__info__image lazy">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="work-process__item work-process__item--two">
-                        <div class="work-process__image">
-                            <div class="work-process__image__inner">
-                                <img src="assets/images/work-process/work-process-1-2.png" alt="Dimension">
-                            </div>
-                        </div><!-- /.work-process__image -->
-                        <div class="work-process__content">
-                            <h4 class="work-process__title">Dimension</h4><!-- /.work-process__title -->
-                            <span class="work-process__step">step 02</span><!-- /.work-process__step -->
-                        </div><!-- /.work-process__content -->
-                    </div><!-- /.work-process__item -->
-                </div><!-- /.col-lg-3 col-sm-6 -->
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                    <div class="work-process__item work-process__item--three">
-                        <div class="work-process__image">
-                            <div class="work-process__image__inner">
-                                <img src="assets/images/work-process/work-process-1-3.png" alt="Installation">
-                            </div><!-- /.work-process__image__inner -->
-                        </div><!-- /.work-process__image -->
-                        <div class="work-process__content">
-                            <h4 class="work-process__title">Installation</h4><!-- /.work-process__title -->
-                            <span class="work-process__step">step 03</span><!-- /.work-process__step -->
-                        </div><!-- /.work-process__content -->
-                    </div><!-- /.work-process__item -->
-                </div><!-- /.col-lg-3 col-sm-6 -->
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
-                    <div class="work-process__item work-process__item--four">
-                        <div class="work-process__image">
-                            <div class="work-process__image__inner">
-                                <img src="assets/images/work-process/work-process-1-4.png" alt="Finishing">
-                            </div><!-- /.work-process__image__inner -->
-                        </div><!-- /.work-process__image -->
-                        <div class="work-process__content">
-                            <h4 class="work-process__title">Finishing</h4><!-- /.work-process__title -->
-                            <span class="work-process__step">step 04</span><!-- /.work-process__step -->
-                        </div><!-- /.work-process__content -->
-                    </div><!-- /.work-process__item -->
-                </div><!-- /.col-lg-3 col-sm-6 -->
-            </div><!-- /.row -->
-            <img data-src="{{ asset('assets/frontend/images/shapes/work-process-shape-1-3.png') }}" alt="" class="work-process__shape-three lazy">
-        </div><!-- /.container -->
-        <div class="work-process__shapes">
-            <img data-src="{{asset('assets/frontend/images/shapes/work-process-shape-1-1.png')}}" alt="" class="work-process__shape-one lazy">
-            <img data-src="{{asset('assets/frontend/images/shapes/work-process-shape-1-2.png')}}" alt="" class="work-process__shape-two lazy">
+                <div class="col-lg-6">
+                    <form class="contact-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" action="https://bracketweb.com/floens-html/inc/sendemail.php">
+                        <div class="contact-one__form__bg" style="background-image: url({{ asset('assets/frontend/images/shapes/contact-info-form-bg.png') }});"></div>
+                        <div class="contact-one__form__top">
+                            <h2 class="contact-one__form__title">Get In Touch With Us And Get <br>
+                                Consultation Support</h2>
+                        </div>
+                        <div class="form-one__group form-one__group--grid">
+                            {!! Form::open(['route' => $module.'contact-us.store', 'method'=>'POST', 'class'=>'submit_form','novalidate'=>'novalidate']) !!}
+                                <div class="form-one__control form-one__control--input form-one__control--full">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                </div>
+                                <div class="form-one__control form-one__control--full">
+                                    <input type="email" name="email" placeholder="your email">
+                                </div>
+                                <div class="form-one__control form-one__control--input form-one__control--full">
+                                    <input type="text" name="company_name" placeholder="Company name" required>
+                                </div>
+                                <div class="form-one__control form-one__control--input form-one__control--full">
+                                    <input type="text" name="designation" placeholder="Designation" required>
+                                </div>
+                                <div class="form-one__control form-one__control--input form-one__control--full">
+                                    <input type="text" name="phone" placeholder="Contact Number" required>
+                                </div>
+    {{--                            <div class="form-one__control form-one__control--full">--}}
+    {{--                                <select class="selectpicker" aria-label="Choose service">--}}
+    {{--                                    <option selected>Choose service</option>--}}
+    {{--                                    <option value="1">Tiling & concrete</option>--}}
+    {{--                                    <option value="2">Industrial Flooring</option>--}}
+    {{--                                    <option value="3">Vinyl Plank</option>--}}
+    {{--                                    <option value="4">Carpets & rugs</option>--}}
+    {{--                                    <option value="5">Oak Flooring</option>--}}
+    {{--                                    <option value="6">Vein Patterns</option>--}}
+    {{--                                </select>--}}
+    {{--                            </div>--}}
+                                <div class="form-one__control form-one__control--mesgae form-one__control--full">
+                                    <textarea name="message" placeholder="Write message"></textarea>
+                                </div>
+                                <div class="form-one__control form-one__control--full">
+                                    <button type="submit" class="floens-btn">
+                                        <span>send message</span>
+                                        <i class="icon-right-arrow"></i>
+                                    </button>
+                                </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+        <img data-src="{{ asset('assets/frontend/images/contact/contact-1-1.jpg') }}" alt="" class="contact-one__image-one wow lazy fadeInLeft" data-wow-duration="1500ms" data-wow-delay="00ms">
+        <img data-src="{{ asset('assets/frontend/images/contact/contact-1-2.jpg') }}" alt="" class="contact-one__image-two wow lazy fadeInRight" data-wow-duration="1500ms" data-wow-delay="00ms">
     </section>
-
 
     <section class="expertise-one section-space">
         <div class="container">
@@ -640,7 +715,7 @@
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
-    </section><!-- /.expertise-one section-space -->
+    </section>
     <!-- expertise end -->
 
     <!-- video start -->

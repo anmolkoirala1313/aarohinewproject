@@ -28,6 +28,7 @@ class RecruitmentProcessController extends BackendBaseController
     public function __construct()
     {
         $this->model  = new Welcome();
+        $this->image_path       = public_path(DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR);
     }
 
 
@@ -60,6 +61,15 @@ class RecruitmentProcessController extends BackendBaseController
                 $request->all());
 
             foreach ($request['detail_title'] as $index=>$title){
+                $section     = HomePageRecruitment::find($request['detail_id'][$index]);
+
+                if ($request->file('icon_input') && array_key_exists($index,$request->file('icon_input'))){
+                    $image_name  = $this->updateImage( $request->file('icon_input')[$index],null,'178','178');
+                    $request->request->add(['icon_'.$index => $image_name]);
+                    if ($section && $section->icon){
+                        $this->deleteImage($section->icon);
+                    }
+                }
 
                 HomePageRecruitment::updateOrCreate(
                     [
@@ -68,6 +78,7 @@ class RecruitmentProcessController extends BackendBaseController
                     ],
                     [
                         'title'         => $title,
+                        'icon'          => $request['icon_'.$index] ?? $section->icon ?? null,
                         'description'   => $request['detail_description'][$index] ?? null,
                         'created_by'    => $request['created_by'],
                     ]
@@ -107,6 +118,16 @@ class RecruitmentProcessController extends BackendBaseController
             $db_values = $data['row']->recruitmentProcess->pluck('id');
 
             foreach ($request['detail_title'] as $index=>$title){
+                $section     = HomePageRecruitment::find($request['detail_id'][$index]);
+
+                if ($request->file('icon_input') && array_key_exists($index,$request->file('icon_input'))){
+                    $image_name  = $this->updateImage( $request->file('icon_input')[$index],null,'178','178');
+                    $request->request->add(['icon_'.$index => $image_name]);
+                    if ($section && $section->icon){
+                        $this->deleteImage($section->icon);
+                    }
+                }
+
                 //adding or updating the values
                 HomePageRecruitment::updateOrCreate(
                     [
@@ -114,6 +135,7 @@ class RecruitmentProcessController extends BackendBaseController
                         'id'          => $request['detail_id'][$index]],
                     [
                         'title'         => $title,
+                        'icon'          => $request['icon_'.$index] ?? $section->icon ?? null,
                         'description'   => $request['detail_description'][$index] ?? null,
                         'created_by'    => auth()->user()->id,
                         'updated_by'    => $request['updated_by'],

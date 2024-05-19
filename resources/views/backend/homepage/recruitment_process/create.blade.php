@@ -30,5 +30,6 @@
     <script src="{{asset('assets/common/general.js')}}"></script>
     @include($module.'includes.toast_message')
     @include($view_path.'includes.script')
+    @include($module.'includes/gallery')
 
 @endsection
