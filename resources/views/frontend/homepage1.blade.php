@@ -613,7 +613,7 @@
                     </div>
                     <div class="row row-gap-32 mt-40">
                         @foreach($data['blogs'] as $blog)
-                            <div class="blog-item col-12 col-xl-4 d-flex align-items-stretch col-sm-6" data-name="">
+                            <div class="blog-item col-12 col-xl-4 d-flex align-items-stretch col-sm-6 d-flex align-items-stretch" data-name="">
                                 <a class="blog-item-main" href="{{ route('frontend.blog.show', $blog->slug) }}">
                                     <div class="bg-img w-100 overflow-hidden mb-minus-1">
                                         <img class="w-100 h-100 display-block lazy" data-src="{{ asset(imagePath($blog->image))}}" alt=""/>
