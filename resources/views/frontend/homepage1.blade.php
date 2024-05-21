@@ -443,6 +443,7 @@
                 </div>
             </div>
         @endif
+
         @if($data['homepage']->why_title)
             <div class="payment-gateway-one bg-surface">
                 <div class="bg-img">

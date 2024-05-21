@@ -51,6 +51,25 @@
             max-height: 100%;
         }
 
+        .owl-carousel .owl-stage-outer {
+            display: flex;
+        }
+
+        .owl-carousel .owl-stage {
+            display: flex;
+            align-items: stretch; /* Ensure all items stretch to the same height */
+        }
+
+        .owl-carousel .owl-item {
+            display: flex;
+            align-items: stretch; /* Ensure the content inside items also stretches */
+        }
+
+        .owl-carousel .item {
+            display: flex;
+            flex: 1 1 auto; /* Allow the items to stretch */
+            flex-direction: column; /* If you want vertical alignment within the item */
+        }
     </style>
 @endsection
 @section('content')
@@ -542,6 +561,134 @@
         </section>
     @endif
 
+    @if(count($data['director']) > 0)
+        <section class="testimonials-three section-space pt-0">
+            <div class="container">
+                <div class="testimonials-three__wrapper">
+                    <div class="sec-title sec-title--center">
+                        <h6 class="sec-title__tagline">Esteemed & Important</h6>
+                        <h3 class="sec-title__title">Message From Our <br> Directors</h3>
+                    </div>
+                    <div class="testimonials-three__carousel floens-owl__carousel floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
+                        "items": 1,
+                        "margin": 0,
+                        "loop": false,
+                        "smartSpeed": 5000,
+                        "nav": true,
+                        "navText": ["<span class=\"icon-slide-left-arrow\"></span>","<span class=\"icon-slide-right-arrow\"></span>"],
+                        "dots": false,
+                        "autoplay": 600,
+                        "responsive": {
+                            "0": {
+                                "items": 1,
+                                "margin": 10
+                            },
+                            "576": {
+                                "items": 1,
+                                "margin": 10
+                            },
+                            "768": {
+                                "items": 1,
+                                "margin": 10
+                            },
+                            "992": {
+                                "items": 1,
+                                "margin": 10
+                            },
+                            "1200": {
+                                "items": 1,
+                                "margin": 10
+                            }
+                        }
+                    }'>
+                        @foreach($data['director'] as $index=>$director)
+                            <div class="item">
+                                <div class="testimonials-card-three">
+                                    <div class="testimonials-card-three__left">
+                                        <div class="testimonials-card-three__image">
+                                            <img src="{{ asset(imagePath($director->image)) }}" alt="{{ $director->title ?? '' }}" style="width: auto;">
+                                        </div>
+                                    </div>
+                                    <div class="testimonials-card-three__right">
+                                        <p class="testimonials-card-three__text text-align-justify">
+                                            {{ $director->description ?? '' }}
+                                        </p>
+                                        <div class="testimonials-card-three__info">
+                                            <h4 class="testimonials-card-three__name">{{ $director->title ?? '' }}</h4>
+                                            <span class="testimonials-card-three__designation">{{ $director->designation ?? '' }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- about Start -->
+    <section class="about-one section-space" id="about">
+        <div class="container">
+            <div class="row gutter-y-60">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="00ms">
+                    <div class="about-one__image-grid">
+                        <div class="about-one__image">
+                            <img data-src="{{ asset(imagePath($data['homepage']->why_image)) }}" alt="" class="about-one__image__three lazy">
+                        </div>
+
+                        @if ($data['homepage']->why_video)
+                            <div class="about-one__circle-text">
+                                <div class="about-one__circle-text__bg" style="background-image: url({{ asset('assets/frontend/images/resources/about-award-bg.jpg') }});"></div>
+                                <div class="video-one__wrapper" style="padding-top: 0px; padding-bottom: 0px; background-image: url({{ asset('assets/frontend/images/shapes/reliable-shape-1-1.png') }});">
+                                    <a href="{{$data['homepage']->why_video }}" class="video-button video-button--large video-popup" style="width: 90px;height: 90px;background-color: #f9fafc;">
+                                        <span class="icon-play"></span>
+                                        <i class="video-button__ripple"></i>
+                                    </a>
+                                </div>
+                                <div class="about-one__curved-circle curved-circle">
+                                    <!-- curved-circle start-->
+                                    <div class="about-one__curved-circle__item curved-circle__item" data-circle-text-options='{
+                                     "radius": 84,
+                                     "forceWidth": true,
+                                     "forceHeight": true}'>
+                                        Click here for video
+                                    </div>
+                                </div><!-- curved-circle end-->
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-one__content">
+                        <div class="sec-title sec-title--border">
+                            <h6 class="sec-title__tagline">  {{ $data['homepage']->why_subtitle ?? 'Why Us' }}</h6>
+                            <h3 class="sec-title__title">{{ $data['homepage']->why_title }}</h3>
+                        </div>
+                        <div class="about-one__content__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <p class="about-one__text text-align-justify">
+                                {{ $data['homepage']->why_description ?? '' }}
+                            </p>
+                        </div>
+                        @if ( $data['homepage']->why_link )
+                            <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                <a href="{{ $data['homepage']->why_link ?? '#' }}" class="floens-btn">
+                                    <span> {{ $data['homepage']->why_button ?? 'Learn More'}}</span>
+                                    <i class="icon-right-arrow"></i>
+                                </a>
+                            </div>
+                        @endif
+                    </div><!-- /.about-one__content -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        <div class="about-one__shapes">
+            <img src="assets/images/shapes/about-shape-1-1.jpg" alt="about-shape" class="about-one__shape about-one__shape--one">
+            <img src="assets/images/shapes/about-shape-1-1.jpg" alt="about-shape" class="about-one__shape about-one__shape--two">
+        </div><!-- /.about-one__shapes -->
+    </section><!-- /.about-one section-space -->
+    <!-- about End -->
+
     <section class="contact-one section-space">
         <div class="contact-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/contact-bg-1.png') }});"></div>
         <div class="container">
@@ -658,7 +805,7 @@
             <div class="container">
                 <div class="sec-title sec-title--center">
                     <h6 class="sec-title__tagline">testimonial</h6>
-                    <h3 class="sec-title__title">What People are Talking <br> About Floens</h3>
+                    <h3 class="sec-title__title">What People are Talking <br> About Us</h3>
                 </div>
 
                 <div class="testimonials-two__carousel floens-owl__carousel floens-owl__carousel--with-shadow floens-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
@@ -734,58 +881,168 @@
         </section>
     @endif
 
-    <section class="blog-one section-space-two">
-        <div class="blog-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/blog-bg-1.jpg') }});"></div>
-        <!-- /.blog-one__bg -->
-        <div class="container">
-            <div class="blog-one__top">
-                <div class="row gutter-y-50 align-items-center">
-                    <div class="col-lg-8">
-                        <div class="sec-title @@extraClassName">
-                            <h6 class="sec-title__tagline">news room</h6>
-                            <h3 class="sec-title__title">See Latest News <br> from the Blog Posts</h3>
+    @if($data['statistics']->ss_title)
+        <section class="reliable-one reliable-one--home section-space-bottom" style="background-color: var(--floens-black2, #2B1E16);background-image: url({{ asset('assets/frontend/images/shapes/contact-info-bg.png') }});">
+            <div class="container">
+                <div class="row gutter-y-60">
+                    <div class="col-lg-6">
+                        <div class="reliable-one__content">
+                            <div class="sec-title sec-title--border">
+                                <h6 class="sec-title__tagline">{{ $data['statistics']->ss_subtitle ?? 'statistics' }}</h6>
+                                <h3 class="sec-title__title" style="color:#f1944b">{{ $data['statistics']->ss_title ?? '' }}</h3>
+                            </div>
+                            <p class="reliable-one__text text-align-justify" style="color: #ada7a0;">
+                                {{ $data['statistics']->ss_description ?? '' }}
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="blog-one__top__button">
-                            <a href="{{ route($module.'blog.index') }}" class="floens-btn floens-btn--border">
-                                <span>view all</span>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-duration="1500ms">
+                        <div class="row align-items-center gutter-y-30">
+                            <div class="col-xl-6 col-lg-12 col-md-5 col-sm-6">
+                                <div class="reliable-one__info reliable-one__info--one">
+                                    <div class="reliable-one__info__icon">
+                                        <span class="icon-024-winner"></span>
+                                    </div><!-- /.reliable-one__info__icon -->
+                                    <div class="reliable-one__info__text">
+                                        <h4 class="reliable-one__info__title" style="color: #ada7a0;">Project Completed</h4>
+                                        <!-- /.reliable-one__info__title -->
+                                        <h5 class="reliable-one__info__total" style="color:#f1944b">{{ $data['homepage']->project_completed ?? '600'}}</h5>
+                                        <!-- /.reliable-one__info__total -->
+                                    </div><!-- /.reliable-one__info__text -->
+                                </div><!-- /.reliable-one__info -->
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-md-5 col-sm-6">
+                                <div class="reliable-one__info reliable-one__info--two">
+                                    <div class="reliable-one__info__icon">
+                                        <span class="icon-smiley"></span>
+                                    </div><!-- /.reliable-one__info__icon -->
+                                    <div class="reliable-one__info__text">
+                                        <h4 class="reliable-one__info__title" style="color: #ada7a0;">Happy Clients</h4>
+                                        <!-- /.reliable-one__info__title -->
+                                        <h5 class="reliable-one__info__total" style="color:#f1944b">{{ $data['homepage']->happy_clients ?? '420'}}</h5>
+                                        <!-- /.reliable-one__info__total -->
+                                    </div><!-- /.reliable-one__info__text -->
+                                </div><!-- /.reliable-one__info -->
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-md-5 col-sm-6 pt-3">
+                                <div class="reliable-one__info reliable-one__info--two reliable_custom">
+                                    <div class="reliable-one__info__icon">
+                                        <span class="icon-010-travel"></span>
+                                    </div><!-- /.reliable-one__info__icon -->
+                                    <div class="reliable-one__info__text">
+                                        <h4 class="reliable-one__info__title" style="color: #ada7a0;">Visa Approved</h4>
+                                        <!-- /.reliable-one__info__title -->
+                                        <h5 class="reliable-one__info__total" style="color:#f1944b">{{ $data['homepage']->visa_approved ?? '310'}}</h5>
+                                        <!-- /.reliable-one__info__total -->
+                                    </div><!-- /.reliable-one__info__text -->
+                                </div><!-- /.reliable-one__info -->
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-md-5 col-sm-6 pt-3">
+                                <div class="reliable-one__info reliable-one__info--two">
+                                    <div class="reliable-one__info__icon">
+                                        <span class="icon-048-success"></span>
+                                    </div><!-- /.reliable-one__info__icon -->
+                                    <div class="reliable-one__info__text">
+                                        <h4 class="reliable-one__info__title" style="color: #ada7a0;">Success Stories</h4>
+                                        <!-- /.reliable-one__info__title -->
+                                        <h5 class="reliable-one__info__total" style="color:#f1944b">{{ $data['homepage']->success_stories ?? '310'}}</h5>
+                                        <!-- /.reliable-one__info__total -->
+                                    </div><!-- /.reliable-one__info__text -->
+                                </div><!-- /.reliable-one__info -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if($data['homepage']->grievance_title)
+        <section class="faq-one section-space">
+            <div class="container">
+                <div class="row gutter-y-60">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1500ms">
+                        <div class="faq-one__image">
+                            <div class="faq-one__image__inner">
+                                <iframe src="{{$data['setting']->google_map}}" style="border:0;width: 545px;height: 745px; border-radius: 8px" allowfullscreen="" loading="lazy"></iframe>
+                            </div><!-- /.faq-one__image__inner -->
+                        </div><!-- /.faq-one__image -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="faq-one__content">
+                            <div class="sec-title sec-title--border">
+                                <h6 class="sec-title__tagline"> {{ $data['homepage']->grievance_subtitle ?? '' }}</h6>
+                                <h3 class="sec-title__title">{{ $data['homepage']->grievance_title }}</h3>
+                            </div>
+                            <p class="faq-one__text text-align-justify">
+                                {{ $data['homepage']->grievance_description ?? '' }}
+                            </p>
+                            <a href="#" class="projects-one__btn floens-btn floens-btn--border">
+                                <span>Reach Out</span>
                                 <i class="icon-right-arrow"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row gutter-y-30">
-                @foreach($data['blogs'] as $blog)
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                            <div class="blog-card__image">
-                                <img data-src="{{ asset(imagePath($blog->image))}}" alt="" class="lazy">
-                                <a href="{{ route('frontend.blog.show', $blog->slug) }}" class="blog-card__image__link">
-                                    <span class="sr-only">{{ $blog->title ?? '' }}</span>
-                                    <!-- /.sr-only --></a>
+        </section>
+    @endif
+
+    @if(count($data['blogs'])>0)
+        <section class="blog-one section-space-two">
+            <div class="blog-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/blog-bg-1.jpg') }});"></div>
+            <!-- /.blog-one__bg -->
+            <div class="container">
+                <div class="blog-one__top">
+                    <div class="row gutter-y-50 align-items-center">
+                        <div class="col-lg-8">
+                            <div class="sec-title @@extraClassName">
+                                <h6 class="sec-title__tagline">news room</h6>
+                                <h3 class="sec-title__title">See Latest News <br> from the Blog Posts</h3>
                             </div>
-                            <div class="blog-card__date">
-                                <span class="blog-card__date__day">{{date('d M', strtotime($blog->created_at))}}</span>
-                                <span class="blog-card__date__month">{{date('Y', strtotime($blog->created_at))}}</span>
-                            </div><!-- /.blog-card__date -->
-                            <div class="blog-card__content">
-                                <h3 class="blog-card__title"><a href="{{ route('frontend.blog.show', $blog->slug) }}">
-                                        {{ $blog->title ?? '' }}
-                                    </a></h3>
-                                <p class="blog-card__text">{{ elipsis(strip_tags($blog->description ?? '')) }}</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="blog-one__top__button">
+                                <a href="{{ route($module.'blog.index') }}" class="floens-btn floens-btn--border">
+                                    <span>view all</span>
+                                    <i class="icon-right-arrow"></i>
+                                </a>
                             </div>
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#"><i class="icon-clipboard"></i> {{ $blog->blogCategory->title ?? '' }}</a></li>
-{{--                                <li><a href="#"><i class="icon-comment"></i> 2 Comments</a></li>--}}
-                            </ul>
                         </div>
                     </div>
-                @endforeach
+                </div>
+                <div class="row gutter-y-30">
+                    @foreach($data['blogs'] as $blog)
+                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                            <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                                <div class="blog-card__image">
+                                    <img data-src="{{ asset(imagePath($blog->image))}}" alt="" class="lazy">
+                                    <a href="{{ route('frontend.blog.show', $blog->slug) }}" class="blog-card__image__link">
+                                        <span class="sr-only">{{ $blog->title ?? '' }}</span>
+                                        <!-- /.sr-only --></a>
+                                </div>
+                                <div class="blog-card__date">
+                                    <span class="blog-card__date__day">{{date('d M', strtotime($blog->created_at))}}</span>
+                                    <span class="blog-card__date__month">{{date('Y', strtotime($blog->created_at))}}</span>
+                                </div><!-- /.blog-card__date -->
+                                <div class="blog-card__content">
+                                    <h3 class="blog-card__title"><a href="{{ route('frontend.blog.show', $blog->slug) }}">
+                                            {{ $blog->title ?? '' }}
+                                        </a></h3>
+                                    <p class="blog-card__text">{{ elipsis(strip_tags($blog->description ?? '')) }}</p>
+                                </div>
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#"><i class="icon-clipboard"></i> {{ $blog->blogCategory->title ?? '' }}</a></li>
+    {{--                                <li><a href="#"><i class="icon-comment"></i> 2 Comments</a></li>--}}
+                                </ul>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
 @endsection
 
 @section('js')
