@@ -189,7 +189,7 @@
                     </div>
 
                     <a href="#" class="search-toggler main-header__search">
-                        <i class="icon-search" aria-hidden="true"></i>
+                        <i class="icon-search1" aria-hidden="true"></i>
                         <span class="sr-only">Search</span>
                     </a>
 

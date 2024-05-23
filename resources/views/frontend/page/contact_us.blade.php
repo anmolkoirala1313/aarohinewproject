@@ -7,71 +7,123 @@
 
     @include($module.'includes.breadcrumb',['breadcrumb_image'=> 'background_action.jpeg'])
 
-
-    <div class="form-contact style-two mt-100">
+    <section class="contact-one section-space">
+        <div class="contact-one__bg" style="background-image: url({{asset('assets/frontend/images/backgrounds/contact-bg-1.png')}});"></div>
         <div class="container">
-            <div class="row flex-between row-gap-32">
-                <div class="col-12 col-lg-5">
-                    <div class="infor flex-columns-between row-gap-32">
-                        <div class="heading">
-                            <div class="title">Contact us</div>
-                            <div class="heading3 mt-12">Get it touch</div>
-                            <div class="body3 mt-8">We will get back to you as soon as possible, or call us </div>
+            <div class="row gutter-y-40">
+                <div class="col-lg-6">
+                    <div class="contact-one__content">
+                        <div class="sec-title sec-title--border">
+                            <h6 class="sec-title__tagline">contact</h6>
+                            <h3 class="sec-title__title">Reach out & <br> Connect with Us</h3>
                         </div>
-                        <div class="list-more-infor">
-                            <div class="item flex-item-center gap-12"><i class="ph-fill ph-phone text-white bg-on-surface p-8 bora-50"></i>
-                                <div class="line-y"> </div>
-                                <div class="body2"><a href="tel:{{ $data['setting_data']->phone ?? $data['setting_data']->mobile ?? '' }}"></a>
-                                    {{ $data['setting_data']->phone ?? $data['setting_data']->mobile ?? '' }}</div>
+                        <p class="contact-one__text">
+                            Our deep understanding of the enterprise psyche, coupled with multi-dimensional analytical technique enables
+                            us to assess issues and suggest solution approaches in alignment with a global vision.
+                        </p>
+                        <div class="contact-one__info wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <div class="contact-one__info__bg" style="background-image: url({{ asset('assets/frontend/images/shapes/contact-info-bg.png') }});">
                             </div>
-                            <div class="item flex-item-center gap-12 mt-20"><i class="ph-bold ph-envelope-simple text-white bg-on-surface p-8 bora-50"></i>
-                                <div class="line-y"> </div>
-                                <div class="body2"><a href="mailto:{{ $data['setting_data']->email }}">{{ $data['setting_data']->email }}</a></div>
+                            <div class="contact-one__info__content">
+                                <div class="contact-one__info__item">
+                                    <div class="contact-one__info__item__inner">
+                                        <div class="contact-one__info__icon">
+                                            <span class="icon-phone-call"></span>
+                                        </div>
+                                        <p class="contact-one__info__text">
+                                            <a href="tel:{{ $data['setting_data']->mobile ?? $data['setting_data']->phone ?? '' }}">
+                                                {{ $data['setting_data']->mobile ?? $data['setting_data']->phone ?? '' }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contact-one__info__item">
+                                    <div class="contact-one__info__item__inner">
+                                        <div class="contact-one__info__icon">
+                                            <span class="icon-paper-plane"></span>
+                                        </div>
+                                        <p class="contact-one__info__text"><a href="mailto:{{ $data['setting_data']->email ?? '' }}"> {{ $data['setting_data']->email ?? '' }}</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-one__info__item">
+                                    <div class="contact-one__info__item__inner">
+                                        <div class="contact-one__info__icon">
+                                            <span class="icon-location"></span>
+                                        </div>
+                                        <address class="contact-one__info__text"><a href="mailto:{{ $data['setting_data']->email ?? '' }}">
+                                                {{ $data['setting_data']->address ?? '' }}
+                                            </a>
+                                        </address>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="item flex-item-center gap-12 mt-20"><i class="ph-bold ph-map-pin text-white bg-on-surface p-8 bora-50"></i>
-                                <div class="line-y"> </div>
-                                <div class="body2">{{ $data['setting_data']->address }}</div>
-                            </div>
-                        </div>
-{{--                        <div class="list-social flex-item-center gap-10"><a class="item bora-50 w-48 h-48 flex-center bg-surface" href="https://www.facebook.com/" target="_blank"><i class="icon-facebook icon-on-surface"></i></a><a class="item bora-50 w-48 h-48 flex-center bg-surface" href="https://www.linkedin.com/" target="_blank"><i class="icon-in icon-on-surface"></i></a><a class="item bora-50 w-48 h-48 flex-center bg-surface" href="https://www.twitter.com/" target="_blank"><i class="icon-twitter fs-14 icon-on-surface ml-1"></i></a><a class="item bora-50 w-48 h-48 flex-center bg-surface" href="https://www.instagram.com/" target="_blank"><i class="icon-insta fs-14 icon-on-surface"></i></a><a class="item bora-50 w-48 h-48 flex-center bg-surface" href="https://www.youtube.com/" target="_blank"><i class="icon-youtube fs-12 icon-on-surface"></i></a></div>--}}
+                            <img data-src="{{ asset('assets/frontend/images/shapes/contact-shape-1-1.png') }}" alt="" class="contact-one__info__image lazy">
+                        </div><
                     </div>
-                </div>
-                <div class="col-12 col-lg-5">
-                    {!! Form::open(['route' => $module.'contact-us.store', 'method'=>'POST', 'class'=>'submit_form','novalidate'=>'novalidate']) !!}
-                        <div class="form-block flex-columns-between gap-20">
-                            <div class="row row-gap-20">
-                                <div class="col-12 col-sm-6">
-                                    <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8" name="name"
-                                           type="text" placeholder="Name"/>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8" name="email" type="email" placeholder="Email"/>
-
-                                </div>
-                                <div class="col-12">
-                                    <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8" name="subject" type="text" placeholder="Subject"/>
-
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8" name="message" cols="10" rows="4" placeholder="Your Message..."></textarea>
-                                </div>
-                            </div>
-                            <div class="button-block">
-                                <button type="submit" class="button-share bg-on-surface text-button text-white pl-36 pr-36 pt-12 pb-12 bora-48">Send Message</button>
-                            </div>
+                </div><!-- /.col-xl-6 -->
+                <div class="col-lg-6">
+                    {!! Form::open(['route' => $module.'contact-us.store', 'method'=>'POST', 'class'=>'contact-one__form contact-form-validated form-one wow fadeInUp submit_form','novalidate'=>'novalidate']) !!}
+                    <div class="contact-one__form__bg" style="background-image: url({{ asset('assets/frontend/images/shapes/contact-info-form-bg.png') }});"></div>
+                    <div class="contact-one__form__top">
+                        <h2 class="contact-one__form__title">Get In Touch With Us And Get <br>
+                            Consultation Support</h2>
+                    </div>
+                    <div class="form-one__group form-one__group--grid">
+                        <div class="form-one__control form-one__control--input form-one__control--full">
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
                         </div>
+                        <div class="form-one__control form-one__control--full">
+                            <input type="email" name="email" id="email" placeholder="your email">
+                        </div>
+                        <div class="form-one__control form-one__control--input form-one__control--full">
+                            <input type="text" name="company_name" id="company_name" placeholder="Company name" required>
+                        </div>
+                        <div class="form-one__control form-one__control--input form-one__control--full">
+                            <input type="text" name="designation" id="designation" placeholder="Designation" required>
+                        </div>
+                        <div class="form-one__control form-one__control--input form-one__control--full">
+                            <input type="text" name="phone" id="phone" placeholder="Contact Number" required>
+                        </div>
+                        {{--                            <div class="form-one__control form-one__control--full">--}}
+                        {{--                                <select class="selectpicker" aria-label="Choose service">--}}
+                        {{--                                    <option selected>Choose service</option>--}}
+                        {{--                                    <option value="1">Tiling & concrete</option>--}}
+                        {{--                                    <option value="2">Industrial Flooring</option>--}}
+                        {{--                                    <option value="3">Vinyl Plank</option>--}}
+                        {{--                                    <option value="4">Carpets & rugs</option>--}}
+                        {{--                                    <option value="5">Oak Flooring</option>--}}
+                        {{--                                    <option value="6">Vein Patterns</option>--}}
+                        {{--                                </select>--}}
+                        {{--                            </div>--}}
+                        <div class="form-one__control form-one__control--mesgae form-one__control--full">
+                            <textarea name="message" placeholder="Write message"></textarea>
+                        </div>
+                        <div class="form-one__control form-one__control--full">
+                            <button type="submit" class="floens-btn" id="submit-quick-inquiry">
+                                <span>send message</span>
+                                <i class="icon-right-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
                     {!! Form::close() !!}
                 </div>
-            </div>
-        </div>
-        @if($data['setting_data'] && $data['setting_data']->google_map)
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        <img data-src="{{ asset('assets/frontend/images/contact/contact-1-2.jpg') }}" alt="" class="contact-one__image-two wow lazy fadeInRight" data-wow-duration="1500ms" data-wow-delay="00ms">
+    </section><!-- /.contact-one section-space -->
 
-            <div class="map-block mt-100">
-                <iframe src="{{$data['setting_data']->google_map}}" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    @if($data['setting_data'] && $data['setting_data']->google_map)
+        <section class="contact-map">
+            <div class="container-fluid">
+                <div class="google-map google-map__contact">
+                    <iframe src="{{$data['setting_data']->google_map}}" width="800" height="600" style="border:0;" class="map__contact" allowfullscreen loading="lazy"></iframe>
+                </div>
             </div>
-        @endif
-    </div>
-    @endsection
+        </section>
+    @endif
+
+@endsection
+
 @section('js')
     <script src="{{asset('assets/common/lazyload.js')}}"></script>
     <script src="{{asset('assets/common/general.js')}}"></script>
