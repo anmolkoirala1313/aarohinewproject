@@ -6196,8 +6196,8 @@ body.megamenu-popup-active .mobile-nav__content {
   z-index: 1;
 }
 .about-one__image-grid {
-  position: relative;
-  width: calc(100% - 30px);
+  /*position: relative;*/
+  /*width: calc(100% - 30px);*/
   display: grid;
   grid-template-columns: calc(50% - 30px) calc(50% + 30px);
   gap: 30px;
@@ -6299,7 +6299,7 @@ body.megamenu-popup-active .mobile-nav__content {
   color: rgba(var(--floens-black2-rgb, 43, 30, 22), 1);
 }
 .about-one__content {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 @media (max-width: 991px) {
   .about-one__content {

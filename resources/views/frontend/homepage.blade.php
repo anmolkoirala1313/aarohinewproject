@@ -627,67 +627,59 @@
         </section>
     @endif
 
-    <!-- about Start -->
-    <section class="about-one section-space" id="about">
-        <div class="container">
-            <div class="row gutter-y-60">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="about-one__image-grid">
-                        <div class="about-one__image">
-                            <img data-src="{{ asset(imagePath($data['homepage']->why_image)) }}" alt="" class="about-one__image__three lazy">
-                        </div>
+    @if($data['homepage']->why_title)
+        <section class="about-one section-space" id="about" style="background-color: var(--floens-black2, #2B1E16);">
+            <div class="services-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/services-bg-1.png') }});"></div>
+            <div class="container">
+                <div class="row gutter-y-60">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="00ms">
+                        <div class="about-one__image-grid">
+                            <div class="about-one__image">
+                                <img data-src="{{ asset(imagePath($data['homepage']->why_image)) }}" alt="" class="about-one__image__three lazy">
+                            </div>
 
-                        @if ($data['homepage']->why_video)
-                            <div class="about-one__circle-text">
-                                <div class="about-one__circle-text__bg" style="background-image: url({{ asset('assets/frontend/images/resources/about-award-bg.jpg') }});"></div>
-                                <div class="video-one__wrapper" style="padding-top: 0px; padding-bottom: 0px; background-image: url({{ asset('assets/frontend/images/shapes/reliable-shape-1-1.png') }});">
-                                    <a href="{{$data['homepage']->why_video }}" class="video-button video-button--large video-popup" style="width: 90px;height: 90px;background-color: #f9fafc;">
-                                        <span class="icon-play"></span>
-                                        <i class="video-button__ripple"></i>
+                            @if($data['homepage']->why_video)
+                                <div class="about-one__circle-text">
+                                    <div class="about-one__circle-text__bg" style="background-image: url({{ asset('assets/frontend/images/resources/about-award-bg.jpg') }});"></div>
+                                    <div class="video-one__wrapper" style="padding-top: 0px; padding-bottom: 0px; background-image: url({{ asset('assets/frontend/images/shapes/reliable-shape-1-1.png') }});">
+                                        <a href="{{$data['homepage']->why_video }}" class="video-button video-button--large video-popup" style="width: 90px;height: 90px;background-color: #f9fafc;">
+                                            <span class="icon-play"></span>
+                                            <i class="video-button__ripple"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-one__content">
+                            <div class="sec-title sec-title--border">
+                                <h6 class="sec-title__tagline">  {{ $data['homepage']->why_subtitle ?? 'Why Us' }}</h6>
+                                <h3 class="sec-title__title" style="color: var(--floens-white, #ffffff);">{{ $data['homepage']->why_title }}</h3>
+                            </div>
+                            <div class="about-one__content__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                <p class="about-one__text text-align-justify" style="color: #d4ccc2">
+                                    {{ $data['homepage']->why_description ?? '' }}
+                                </p>
+                            </div>
+                            @if ( $data['homepage']->why_link )
+                                <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                    <a href="{{ $data['homepage']->why_link ?? '#' }}" class="floens-btn">
+                                        <span> {{ $data['homepage']->why_button ?? 'Learn More'}}</span>
+                                        <i class="icon-right-arrow"></i>
                                     </a>
                                 </div>
-                                <div class="about-one__curved-circle curved-circle">
-                                    <!-- curved-circle start-->
-                                    <div class="about-one__curved-circle__item curved-circle__item" data-circle-text-options='{
-                                     "radius": 84,
-                                     "forceWidth": true,
-                                     "forceHeight": true}'>
-                                        Click here for video
-                                    </div>
-                                </div><!-- curved-circle end-->
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-one__content">
-                        <div class="sec-title sec-title--border">
-                            <h6 class="sec-title__tagline">  {{ $data['homepage']->why_subtitle ?? 'Why Us' }}</h6>
-                            <h3 class="sec-title__title">{{ $data['homepage']->why_title }}</h3>
-                        </div>
-                        <div class="about-one__content__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                            <p class="about-one__text text-align-justify">
-                                {{ $data['homepage']->why_description ?? '' }}
-                            </p>
-                        </div>
-                        @if ( $data['homepage']->why_link )
-                            <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                <a href="{{ $data['homepage']->why_link ?? '#' }}" class="floens-btn">
-                                    <span> {{ $data['homepage']->why_button ?? 'Learn More'}}</span>
-                                    <i class="icon-right-arrow"></i>
-                                </a>
-                            </div>
-                        @endif
-                    </div><!-- /.about-one__content -->
-                </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-        <div class="about-one__shapes">
-            <img src="assets/images/shapes/about-shape-1-1.jpg" alt="about-shape" class="about-one__shape about-one__shape--one">
-            <img src="assets/images/shapes/about-shape-1-1.jpg" alt="about-shape" class="about-one__shape about-one__shape--two">
-        </div><!-- /.about-one__shapes -->
-    </section><!-- /.about-one section-space -->
-    <!-- about End -->
+                            @endif
+                        </div><!-- /.about-one__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div>
+            <div class="about-one__shapes">
+                <img data-src="{{ asset('assets/frontend/images/shapes/about-shape-1-1.jpg') }}" alt="" class="about-one__shape about-one__shape--one lazy">
+                <img data-src="{{ asset('assets/frontend/images/shapes/about-shape-1-1.jpg') }}" alt="" class="about-one__shape about-one__shape--two lazy">
+            </div><!-- /.about-one__shapes -->
+        </section>
+    @endif
 
     <section class="contact-one section-space">
         <div class="contact-one__bg" style="background-image: url({{ asset('assets/frontend/images/backgrounds/contact-bg-1.png') }});"></div>
