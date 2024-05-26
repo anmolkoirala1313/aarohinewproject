@@ -118,13 +118,12 @@ class AlbumController extends BackendBaseController
             foreach ( $files as $file ) {
                 if ($file !='.' && $file !='..' && in_array($file,$tableImages)) {
                     $obj['name'] = $file;
-                    $file_path = public_path('storage/images/'.$this->folder_name.'/gallery/').$file;
+                    $file_path    = public_path('storage/images/'.$this->folder_name.'/gallery/').$file;
                     $obj['size'] = filesize($file_path);
                     $obj['path'] = url('/storage/images/'.$this->folder_name.'/gallery/'.$file);
                     $data[] = $obj;
                 }
             }
-//            dd($files,$tableImages);
             return response()->json($data);
         }
     }
@@ -158,14 +157,12 @@ class AlbumController extends BackendBaseController
                 ->orientate()
                 ->save($this->image_path . '/'.$this->folder_name.'/gallery/' . $resize_name);
 
-
-
-            $photo->move($this->image_path, $save_name);
+            $photo->move($this->image_path . '/'.$this->folder_name.'/gallery/', $save_name);
 
             $upload                 = new AlbumGallery();
             $upload->album_id       = $row->id;
             $upload->created_by     = Auth::user()->id;
-            $upload->filename       = $save_name;
+            $upload->filename        = $save_name;
             $upload->resized_name   = $resize_name;
             $upload->original_name  = basename(pathinfo($photo->getClientOriginalName(),PATHINFO_FILENAME));
             $upload->save();
@@ -183,7 +180,7 @@ class AlbumController extends BackendBaseController
             return Response::json(['message' => 'Sorry file does not exist'], 400);
         }
 
-        $file_path = $this->image_path . '/'.$this->folder_name.'/gallery/' . $uploaded_image->filename;
+        $file_path    = $this->image_path . '/'.$this->folder_name.'/gallery/' . $uploaded_image->filename;
         $resized_file = $this->image_path . '/'.$this->folder_name.'/gallery/' . $uploaded_image->resized_name;
 
         if (file_exists($file_path)) {
@@ -195,7 +192,7 @@ class AlbumController extends BackendBaseController
         }
 
         if (!empty($uploaded_image)) {
-            $uploaded_image->delete();
+            $uploaded_image->forceDelete();
         }
 
         return Response::json(['success' => $resized_name], 200);
