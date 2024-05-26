@@ -12,24 +12,18 @@
 
     @include($module.'includes.breadcrumb',['breadcrumb_image'=> 'background_action.jpeg'])
 
-    <div class="content-detail-block mt-100 pb-100">
+    <div class="cart-page content-detail-block section-space">
         <div class="container">
+            <div class="sec-title sec-title--center">
+                @if ( $data['rows']->first()->subtitle )
+                    <h6 class="sec-title__tagline">{{  $data['rows']->first()->subtitle  ?? ''  }}</h6>
+                @endif
+                <h3 class="sec-title__title sec-title--border" style="padding-bottom: 18px;">{{  $data['rows']->first()->title ?? '' }}</h3>
+                <div class="reliable-one__text mt-3">{{  $data['rows']->first()->description ?? '' }}</div>
+            </div>
             <div class="row row-gap-32">
                 <div class="col-12 col-xl-12">
-                    <div class="content-para pr-55">
-                        <div class="text text-center">
-                            @if ( $data['rows']->first()->subtitle )
-                                <div class="text-sub-heading2 text-white pt-8 pb-8 pl-16 pr-16 bg-blue bora-8 display-inline-block">
-                                    {{  $data['rows']->first()->subtitle ?? ''  }}
-                                </div>
-                            @endif
-                            <div class="heading3 mt-12 ">{{  $data['rows']->first()->title ?? '' }}</div>
-                            <div class="right flex-columns-center gap-8 mt-12">
-                                <div class="body3">{{  $data['rows']->first()->description ?? '' }}</div>
-                            </div>
-                        </div>
-
-                        @if(count($element))
+                        @if(count($data['rows']))
                             <div class=" py-5">
                                 <table class="table table-hover table-bordered" data-toggle="table">
                                     <thead>
