@@ -15165,7 +15165,7 @@ li:hover .sidebar__comments__icon::after {
 --------------------------------------------------------------*/
 .evaluation-schedule {
   padding-top: 116px;
-  padding-bottom: 376px;
+  padding-bottom: 120px;
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
@@ -15189,7 +15189,7 @@ li:hover .sidebar__comments__icon::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: RGBA(var(--floens-base2-rgb, 138, 81, 51), 0.9);
+  background-color: #2a7dc2bf;
 }
 .evaluation-schedule .container-fluid {
   position: relative;
@@ -15238,7 +15238,7 @@ li:hover .sidebar__comments__icon::after {
   }
 }
 .evaluation-schedule__title {
-  font-size: 70px;
+  font-size: 45px;
   color: var(--floens-white, #ffffff);
   line-height: normal;
   letter-spacing: 0.7px;

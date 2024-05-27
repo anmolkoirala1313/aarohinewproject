@@ -33,7 +33,7 @@ class PageSectionElementController extends BackendBaseController
     {
         $this->model           = new PageSectionElement();
         $this->image_path      = public_path(DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR);
-        $this->file_path       = public_path(DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.'files'.DIRECTORY_SEPARATOR);
+        $this->file_path        = public_path(DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.'files'.DIRECTORY_SEPARATOR);
     }
 
     public function show($id)
@@ -97,7 +97,7 @@ class PageSectionElementController extends BackendBaseController
         DB::beginTransaction();
         try {
             if($request->hasFile('image_input')){
-                $image_name = $this->updateImage($request->file('image_input'),$data['row']->image,'550','550');
+                $image_name = $this->updateImage($request->file('image_input'),$data['row']->image,'550','660');
                 $request->request->add(['image'=>$image_name]);
             }
             $request->request->add(['status' => true ]);
