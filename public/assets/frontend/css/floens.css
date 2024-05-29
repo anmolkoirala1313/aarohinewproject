@@ -14493,7 +14493,8 @@ li:hover .sidebar__comments__icon::after {
 .projects-three__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin-bottom: 120px;
+  margin-bottom: 85px;
+    padding-bottom: 85px;
 }
 @media (max-width: 767px) {
   .projects-three__grid {
