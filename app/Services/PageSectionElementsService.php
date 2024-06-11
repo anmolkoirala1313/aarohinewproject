@@ -53,7 +53,7 @@ class PageSectionElementsService {
                 $subheading  =  array_key_exists($index, $request->input('subtitle')) ? $request->input('subtitle')[$index] : null;
 
                 if ($request->file('image_input') && array_key_exists($index,$request->file('image_input'))){
-                    $image_name  = $this->updateImage( $request->file('image_input')[$index],null,'70','70');
+                    $image_name  = $this->updateImage( $request->file('image_input')[$index],null,'370','235');
                     $request->request->add(['image_'.$index => $image_name]);
                     if ($section && $section->image){
                         $this->deleteImage($section->image);
@@ -205,7 +205,7 @@ class PageSectionElementsService {
                 $subheading  =  array_key_exists($index, $request->input('subtitle')) ? $request->input('subtitle')[$index] : null;
 
                 if ($request->file('image_input') && array_key_exists($index,$request->file('image_input'))){
-                    $image_name  = $this->updateImage( $request->file('image_input')[$index],null,'70','70');
+                    $image_name  = $this->updateImage( $request->file('image_input')[$index],null,'370','235');
                     $request->request->add(['image_'.$index => $image_name]);
                     if ($section && $section->image){
                         $this->deleteImage($section->image);
