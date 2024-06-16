@@ -1,4 +1,4 @@
-<section class="blog-page section-space">
+<section class="blog-page section-space" style="padding-top: 0px;padding-bottom: 0px;">
     <div class="container">
         <div class="row gutter-y-60">
             <div class="col-lg-12">
@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-            </div><
+            </div>
         </div>
     </div>
 </section>

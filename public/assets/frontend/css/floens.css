@@ -16066,4 +16066,14 @@ body.boxed-wrapper .projects-one__shape {
     top: 30px;
 }
 
+.border-radius-left{
+    border-top-left-radius: 1%;
+    border-bottom-left-radius: 1%;
+}
+
+.border-radius-right{
+    border-top-right-radius: 1%;
+    border-bottom-right-radius: 1%;
+}
+sss
 /*# sourceMappingURL=floens.css.map */

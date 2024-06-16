@@ -19,7 +19,7 @@
                     <div class="col-lg-6 mt-3">
                         <div class="mb-1">
                             <label class="form-label required">Title </label>
-                            <input type="text" class="form-control" name="heading[]" value="{{ $card_image[0]->heading ?? null}}" maxlength="60">
+                            <input type="text" class="form-control" name="title[]" value="{{ $card_image[0]->title ?? null}}" maxlength="60">
                             <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                             <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
                             <input type="hidden" class="form-control" value="{{ $data['row']->id }}" name="page_id" required>
@@ -31,7 +31,7 @@
                     <div class="col-lg-6 mt-3">
                         <div class="mb-1">
                             <label>Sub Title </label>
-                            <input type="text" class="form-control" maxlength="60" name="subheading[]" value="{{ $card_image[0]->subheading ?? null}}">
+                            <input type="text" class="form-control" maxlength="60" name="subtitle[]" value="{{ $card_image[0]->subtitle ?? null}}">
                             <div class="invalid-feedback">
                                 Please enter the basic section sub title.
                             </div>

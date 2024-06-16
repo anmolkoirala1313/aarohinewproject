@@ -1,6 +1,6 @@
 <tr>
     <td>
-        {!! Form::text('list_header[]',  isset($detail) ? $detail->list_title:null, ['class'=>'form-control list_title','placeholder'=>'Enter title','required']) !!}
+        {!! Form::text('list_title[]',  isset($detail) ? $detail->list_title:null, ['class'=>'form-control list_title','placeholder'=>'Enter title','required']) !!}
         {!! Form::hidden('list_id[]',  isset($detail) ? $detail->id:null, ['class'=>'form-control list_id','readonly']) !!}
     </td>
     <td>

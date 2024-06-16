@@ -1,27 +1,26 @@
-<div class="blog-list style-one mt-80 mb-80">
-    <div class="container">
-        <div class="text-center">
+<section class="gallery-one section-space">
+    <div class="container-fluid">
+        <div class="sec-title sec-title--center">
             @if ($element->list_number_1)
-                <div class="text-sub-heading2 text-white pt-8 pb-8 pl-16 pr-16 bg-blue bora-8 display-inline-block">
-                    {{ $element->list_number_1 ?? '' }}
-                </div>
+                <h6 class="sec-title__tagline"> {{ $element->list_number_1 ?? '' }}</h6>
             @endif
-
-            <div class="heading3 mt-16">{{ $element->list_number_2 ?? '' }}</div>
+            <h3 class="sec-title__title sec-title--border" style="padding-bottom: 18px;">{{ $element->list_number_2 ?? '' }}</h3>
         </div>
-        <div class="row mt-20">
+        <div class="row">
             @foreach($element->pageSectionGalleries as $index=>$gallery)
-                <div class="col-4">
-                    <div class="magnific-img mt-2">
-                        <a class="image-popup-vertical-fit"
-                           href="{{ asset(galleryImagePath('section_element').$gallery->resized_name) }}" title="">
-                            <img src="{{ asset(galleryImagePath('section_element').$gallery->resized_name) }}"
-                                 class="bora-16 {{ @$data['row']->slug=='legal-document' || @$data['row']->slug=='legal-documents' || @$data['row']->slug=='sample-documents' || @$data['row']->slug=='sample-document' ? 'w-100':'image-dimension' }}" alt="" />
-                        </a>
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="gallery-one__card">
+                        <img src="{{ asset(galleryImagePath('section_element').$gallery->resized_name) }}" alt="" class="{{ @$data['row']->slug=='legal-document' || @$data['row']->slug=='legal-documents' || @$data['row']->slug=='sample-documents' || @$data['row']->slug=='sample-document' ? 'w-100':'image-dimension' }}">
+                        <div class="gallery-one__card__hover">
+                            <a href="{{ asset(galleryImagePath('section_element').$gallery->resized_name) }}" class="img-popup">
+                                <span class="gallery-one__card__icon"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
-</div>
+</section>
+
 

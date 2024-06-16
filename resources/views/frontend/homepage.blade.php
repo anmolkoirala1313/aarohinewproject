@@ -957,9 +957,9 @@
                         <div class="faq-one__image">
                             <div class="faq-one__image__inner">
                                 <iframe src="{{$data['setting']->google_map}}" style="border:0;width: 545px;height: 745px; border-radius: 8px" allowfullscreen="" loading="lazy"></iframe>
-                            </div><!-- /.faq-one__image__inner -->
-                        </div><!-- /.faq-one__image -->
-                    </div><!-- /.col-lg-6 -->
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="200ms">
                         <div class="faq-one__content">
                             <div class="sec-title sec-title--border">
@@ -969,10 +969,12 @@
                             <p class="faq-one__text text-align-justify">
                                 {{ $data['homepage']->grievance_description ?? '' }}
                             </p>
-                            <a href="#" class="projects-one__btn floens-btn floens-btn--border">
-                                <span>Reach Out</span>
-                                <i class="icon-right-arrow"></i>
-                            </a>
+                            @if($data['homepage']->grievance_link)
+                                <a href="{{ $data['homepage']->grievance_link }}" class="projects-one__btn floens-btn floens-btn--border">
+                                    <span>{{ $data['homepage']->grievance_button ?? 'Contact Us' }}</span>
+                                    <i class="icon-right-arrow"></i>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>

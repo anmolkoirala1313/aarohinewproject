@@ -307,10 +307,10 @@ class PageSectionElementsService {
     public function syncImageCard($request, $data ){
         $cards       = PageSection::find($data['section_id']);
         $cards_id    = $cards->pageSectionElements->pluck('id')->toArray();
-        foreach ($request['list_header'] as $index=>$title){
+        foreach ($request['list_title'] as $index=>$title){
             $section     = $this->model->find($request['list_id'][$index]);
-            $heading     =  array_key_exists($index, $request->input('heading')) ? $request->input('heading')[$index] : null;
-            $subheading  =  array_key_exists($index, $request->input('subheading')) ? $request->input('subheading')[$index] : null;
+            $heading     =  array_key_exists($index, $request->input('title')) ? $request->input('title')[$index] : null;
+            $subheading  =  array_key_exists($index, $request->input('subtitle')) ? $request->input('subtitle')[$index] : null;
             $description =  array_key_exists($index, $request->input('description')) ? $request->input('description')[$index] : null;
 
             if ($request->file('image_input') && array_key_exists($index,$request->file('image_input'))){
@@ -327,8 +327,8 @@ class PageSectionElementsService {
                     'page_section_id' => $data['section_id']
                 ],
                 [
-                    'heading'             => $heading,
-                    'subheading'          => $subheading,
+                    'title'               => $heading,
+                    'subtitle'            => $subheading,
                     'description'         => $description,
                     'list_title'          => $title,
                     'image'               => $request['image_position'][$index],

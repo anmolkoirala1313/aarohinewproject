@@ -82,7 +82,7 @@
         $( document ).ready(function() {
             let selector = $('.custom-description').find('table').length;
             if(selector>0){
-                $('.custom-description').find('table').addClass('table table-bordered table-responsive');
+                $('.custom-description').find('table').addClass('table table-bordered table-responsive w-100');
             }
         });
 
