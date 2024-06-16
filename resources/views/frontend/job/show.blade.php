@@ -38,122 +38,81 @@
 
     @include($module.'includes.breadcrumb',['breadcrumb_image'=> 'background_action.jpeg'])
 
-    <div class="blog-list style-detail mt-100 mb-100">
+    <section class="work-details section-space">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="heading4 mt-16">
-                        {{ $data['row']->name ?? $data['row']->title ?? '' }}
-                    </div>
-                    <div class="date flex-item-center gap-16 mt-16">
-                        <div class="item-date flex-item-center"><i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">{{date('d M Y', strtotime($data['row']->created_at))}}</span></div>
-                    </div>
-                    <div class="blog-paragraph">
-                        <div class="paragraph-heading text-center">
-                            <div class="bg-img mt-3">
-                                <img class="w-100 bora-16 lazy" data-src="{{ asset(imagePath($data['row']->image)) }}"  alt=""/></div>
+            <div class="row gutter-y-60">
+                <div class="col-lg-8">
+                    <div class="work-details__content">
+                        <div class="work-details__image wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <img class="lazy" data-src="{{ asset(imagePath($data['row']->image)) }}" alt="">
                         </div>
-                        <div class="paragraph-content mt-32">
-                            <div class="body2 text-secondary text-align-justify custom-description">
-                                {!!  $data['row']->description !!}
+                        <h3 class="work-details__title">   {{ $data['row']->name ?? $data['row']->title ?? '' }}</h3>
+                        <div class="work-details__text work-details__text--one custom-description text-align-justify wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            {!!  $data['row']->description !!}
+                        </div>
+                        <div class="blog-details__social">
+                            <h4 class="blog-details__meta__title">Share:</h4>
+                            <div class="details-social">
+                                <a href="#" target="_blank"> <i class="icon-facebook" onclick='fbShare("{{route('frontend.job.show',$data['row']->slug)}}")'></i></a>
+                                <a href="#" target="_blank"> <i class="fab fa-whatsapp" onclick='whatsappShare("{{route('frontend.job.show',$data['row']->slug)}}","{{ $data['row']->title }}")'></i></a>
+                                <a href="#" target="_blank"> <i class="fs-14"  onclick='twitShare("{{route('frontend.job.show',$data['row']->slug)}}","{{ $data['row']->title }}")'>
+                                        <?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="20px" height="20px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/></svg>
+                                    </i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-more-infor mt-32">
-                        <div class="infor-above flex-between">
-                            <div class="tags-cloud-block flex-item-center gap-12">
-                                <div class="body3">Category:</div>
-                                <div class="list-nav flex-item-center gap-12">
-                                    @foreach($data['row']->categories as $category)
-                                        <a class="caption2 pt-8 pb-8 pl-16 pr-16 bg-surface bora-20 hover-button-black" href="{{ route('frontend.job.category',$category->title)}}">
-                                            {{$category->title}}
-                                        </a>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="share-block flex-item-center gap-16">
-                                <div class="caption2 pt-8 pb-8 pl-16 pr-16 bora-8 border-line-1px">
-                                    Share
-                                </div>
-                                <div class="social-media flex-item-center gap-12">
-                                    <a href="#" target="_blank"> <i class="icon-facebook" onclick='fbShare("{{route('frontend.job.show',$data['row']->slug)}}")'></i></a>
-                                    <a href="#" target="_blank"> <i class="fab fa-whatsapp" onclick='whatsappShare("{{route('frontend.job.show',$data['row']->slug)}}","{{ $data['row']->title }}")'></i></a>
-                                    <a href="#" target="_blank"> <i class="icon-twitter fs-14"  onclick='twitShare("{{route('frontend.job.show',$data['row']->slug)}}","{{ $data['row']->title }}")'></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-32 line-x"></div>
-                        <div class="infor-below flex-between pt-20 pb-20">
-                            @if($data['previous'])
-                                <div class="prev-block"> <a class="text-left" href="{{ route('frontend.blog.show', $data['previous']->slug) }}">
-                                        <div class="text-button-uppercase text-blue">Previous</div>
-                                        <div class="heading7 mt-4">{{ $data['previous']->title }} </div></a></div>
-                            @endif
-                            @if($data['next'] )
-                                <div class="line-y"></div>
-                                <div class="next-block"> <a class="text-right" href="{{ route('frontend.blog.show', $data['next']->slug) }}">
-                                        <div class="text-button-uppercase text-blue">Next</div>
-                                        <div class="heading7 mt-4">{{ $data['next']->title }}</div></a></div>
-                            @endif
-                        </div>
-                        <div class="line-x"></div>
-
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="bora-12 bg-white box-shadow p-32 flex-columns-between">
-                        <div class="heading6">Job Information</div>
-                        <div class="infor-item flex-between mt-32">
-                            <div class="text-button">Published Date:</div>
-                            <div class="body3 text-secondary">
-                                @if(@$data['row']->end_date >= date('Y-m-d'))
-                                    {{date('M j, Y',strtotime(@$data['row']->start_date))}} - {{date('M j, Y',strtotime(@$data['row']->end_date))}}
-                                @else
-                                    Expired
-                                @endif
+                <div class="col-lg-4 wow fadeInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <aside class="work-details__sidebar">
+                        <h3 class="work-details__sidebar__title">Demand Information</h3>
+                        <div class="work-details__sidebar__inner">
+                            <div class="work-details__sidebar__info">
+                                <h4 class="work-details__sidebar__info__title">Published Date:</h4>
+                                <p class="work-details__sidebar__info__text">
+                                    @if(@$data['row']->end_date >= date('Y-m-d'))
+                                        {{date('M j, Y',strtotime(@$data['row']->start_date))}} - {{date('M j, Y',strtotime(@$data['row']->end_date))}}
+                                    @else
+                                        Expired
+                                    @endif
+                                </p>
                             </div>
-                        </div>
-                        @if($data['row']->company)
-                            <div class="line-x mt-16"></div>
-                            <div class="infor-item flex-between mt-32">
-                                <div class="text-button">Companuy</div>
-                                <div class="body3 text-secondary">{{ $data['row']->company ?? '' }}</div>
-                            </div>
-                        @endif
-                        @if($data['row']->required_number)
-                            <div class="line-x mt-16"></div>
-                            <div class="infor-item flex-between mt-32">
-                                <div class="text-button">Required Number</div>
-                                <div class="body3 text-secondary">{{ $data['row']->required_number ?? '' }}</div>
-                            </div>
-                        @endif
-                        @if($data['row']->salary)
-                            <div class="line-x mt-16"></div>
-                            <div class="infor-item flex-between mt-16">
-                                <div class="text-button">Salary</div>
-                                <div class="body3 text-secondary">{{ $data['row']->required_number ?? '' }}</div>
-                            </div>
-                        @endif
-                        @if($data['row']->min_qualification)
-                            <div class="line-x mt-16"></div>
-                            <div class="infor-item flex-between mt-16">
-                                <div class="text-button">Min Qualification</div>
-                                <div class="body3 text-secondary">{{ $data['row']->min_qualification ?? '' }}</div>
-                            </div>
-                        @endif
-                        @if($data['row']->formlink && $data['row']->end_date >= date('Y-m-d'))
-                            <div class="line-x mt-16"></div>
-                            <div class="infor-item flex-between mt-16">
-                                <div class="text-button">Location</div>
-                                <div class="body3 text-secondary"><a href="{{$data['row']->formlink}}" target="_blank">Submit response</a></div>
-                            </div>
-                        @endif
-                    </div>
-                </div>
+                            @if($data['row']->company)
+                                <div class="work-details__sidebar__info work-details__sidebar__info--client">
+                                    <h4 class="work-details__sidebar__info__title work-details__sidebar__info__title--client">Company:</h4>
+                                    <p class="work-details__sidebar__info__text">{{ $data['row']->company ?? '' }}</p>
+                                </div>
+                            @endif
+                            @if($data['row']->required_number)
+                                <div class="work-details__sidebar__info">
+                                    <h4 class="work-details__sidebar__info__title">Required Number:</h4>
+                                    <p class="work-details__sidebar__info__text">{{ $data['row']->required_number ?? '' }}</p>
+                                </div>
+                            @endif
+                            @if($data['row']->salary)
+                                <div class="work-details__sidebar__info">
+                                    <h4 class="work-details__sidebar__info__title">Salary:</h4>
+                                    <p class="work-details__sidebar__info__text">{{ $data['row']->required_number ?? '' }}</p>
+                                </div>
+                            @endif
+                            @if($data['row']->min_qualification)
+                                <div class="work-details__sidebar__info">
+                                    <h4 class="work-details__sidebar__info__title">Min. Qualification:</h4>
+                                    <p class="work-details__sidebar__info__text">{{ $data['row']->min_qualification ?? '' }}</p>
+                                </div>
+                            @endif
+                            @if($data['row']->formlink && $data['row']->end_date >= date('Y-m-d'))
 
+                                <div class="work-details__sidebar__info">
+                                    <h4 class="work-details__sidebar__info__title">Application Form:</h4>
+                                    <p class="work-details__sidebar__info__text"><a href="{{$data['row']->formlink}}" target="_blank">Submit response</a></p>
+                                </div>
+                            @endif
+                        </div>
+                    </aside>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 @endsection

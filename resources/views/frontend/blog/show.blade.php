@@ -39,70 +39,57 @@
 
     @include($module.'includes.breadcrumb',['breadcrumb_image'=> 'background_action.jpeg'])
 
-    <div class="blog-list style-detail mt-100 mb-100">
+
+    <section class="blog-page section-space">
         <div class="container">
-            <div class="row flex-center">
-                <div class="col-12 col-lg-8">
-                    <a class="caption2 pt-8 pb-8 pl-16 pr-16 bg-surface bora-20 hover-button-black" href="{{ route('frontend.blog.category', $data['row']->blogCategory->slug)}}">
-                        {{ $data['row']->blogCategory->title ?? ''}}
-                    </a>
-                    <div class="heading4 mt-16">   {{ $data['row']->title ?? '' }}</div>
-                    <div class="date flex-item-center gap-16 mt-16">
-                        <div class="item-date flex-item-center"><i class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">{{date('d M Y', strtotime($data['row']->created_at))}}</span></div>
-                    </div>
-                    <div class="blog-paragraph">
-                        <div class="paragraph-heading text-center">
-                            <div class="bg-img mt-40">
-                                <img class="w-100 bora-16 lazy" data-src="{{ asset(imagePath($data['row']->image)) }}"  alt=""/></div>
-                        </div>
-                        <div class="paragraph-content mt-32">
-                            <div class="body2 text-secondary text-align-justify custom-description">
-                                {!!  $data['row']->description !!}
+            <div class="row gutter-y-60">
+                <div class="col-lg-8">
+                    <div class="blog-details">
+                        <div class="blog-card wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="blog-card__image">
+                                <img class="lazy" data-src="{{ asset(imagePath($data['row']->image)) }}" alt="">
+                                <div class="blog-card__date">
+                                    <span class="blog-card__date__day">{{date('d M', strtotime($data['row']->created_at))}}</span>
+                                    <span class="blog-card__date__month">{{date('Y', strtotime($data['row']->created_at))}}</span>
+                                </div>
+                            </div>
+                            <div class="blog-card__content">
+                                <h3 class="blog-card__title">{{ $data['row']->title ?? '' }}</h3>
+                                <div class="blog-card__text blog-card__text--one custom-description text-align-justify">
+                                    {!!  $data['row']->description !!}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-more-infor mt-32">
-                        <div class="infor-above flex-between">
-                            <div class="tags-cloud-block flex-item-center gap-12">
-                                <div class="body3">Category:</div>
-                                <div class="list-nav flex-item-center gap-12">
-                                    <a class="caption2 pt-8 pb-8 pl-16 pr-16 bg-surface bora-20 hover-button-black" href="{{ route('frontend.blog.category', $data['row']->blogCategory->slug)}}">
+                        <div class="blog-details__meta">
+                            <div class="blog-details__tags">
+                                <h4 class="blog-details__meta__title">Tags:</h4>
+                                <div class="blog-details__tags__box">
+                                    <a href="{{ route('frontend.blog.category', $data['row']->blogCategory->slug)}}">
                                         {{ $data['row']->blogCategory->title ?? ''}}
                                     </a>
                                 </div>
                             </div>
-                            <div class="share-block flex-item-center gap-16">
-                                <div class="caption2 pt-8 pb-8 pl-16 pr-16 bora-8 border-line-1px">
-                                 Share
-                                </div>
-                                <div class="social-media flex-item-center gap-12">
+                            <div class="blog-details__social">
+                                <h4 class="blog-details__meta__title">Share:</h4>
+                                <div class="details-social">
                                     <a href="#" target="_blank"> <i class="icon-facebook" onclick='fbShare("{{route('frontend.blog.show',$data['row']->slug)}}")'></i></a>
                                     <a href="#" target="_blank"> <i class="fab fa-whatsapp" onclick='whatsappShare("{{route('frontend.blog.show',$data['row']->slug)}}","{{ $data['row']->title }}")'></i></a>
-                                    <a href="#" target="_blank"> <i class="icon-twitter fs-14"  onclick='twitShare("{{route('frontend.blog.show',$data['row']->slug)}}","{{ $data['row']->title }}")'></i></a>
+                                    <a href="#" target="_blank"> <i class="fs-14"  onclick='twitShare("{{route('frontend.blog.show',$data['row']->slug)}}","{{ $data['row']->title }}")'>
+                                            <?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="20px" height="20px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/></svg>
+                                        </i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-32 line-x"></div>
-                            <div class="infor-below flex-between pt-20 pb-20">
-                                @if($data['previous'])
-                                    <div class="prev-block"> <a class="text-left" href="{{ route('frontend.blog.show', $data['previous']->slug) }}">
-                                            <div class="text-button-uppercase text-blue">Previous</div>
-                                            <div class="heading7 mt-4">{{ $data['previous']->title }} </div></a></div>
-                                @endif
-                                @if($data['next'] )
-                                    <div class="line-y"></div>
-                                    <div class="next-block"> <a class="text-right" href="{{ route('frontend.blog.show', $data['next']->slug) }}">
-                                            <div class="text-button-uppercase text-blue">Next</div>
-                                            <div class="heading7 mt-4">{{ $data['next']->title }}</div></a></div>
-                                @endif
-                            </div>
-                            <div class="line-x"></div>
-
                     </div>
+                </div>
+                <div class="col-lg-4">
+                    @include($view_path.'includes.sidebar')
+
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
 @endsection
 
 @section('js')
