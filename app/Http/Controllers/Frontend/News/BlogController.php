@@ -40,7 +40,7 @@ class BlogController extends BackendBaseController
         $this->page_method      = 'index';
         $this->page_title       = 'All '.$this->page;
         $data                   = $this->getCommonData();
-        $data['rows']           = $this->model->active()->descending()->paginate(2);
+        $data['rows']           = $this->model->active()->descending()->paginate(6);
 
         if(!$data['rows']){
             abort(404);
@@ -82,7 +82,7 @@ class BlogController extends BackendBaseController
             $data                   = $this->getCommonData();
             $data['category']       = BlogCategory::where('slug',$slug)->active()->first();
             $this->page_title       = $data['category']->title;
-            $data['rows']           = $this->model->where('blog_category_id', $data['category']->id)->active()->descending()->paginate(4);
+            $data['rows']           = $this->model->where('blog_category_id', $data['category']->id)->active()->descending()->paginate(6);
         } catch (\Exception $e) {
             abort(404);
         }

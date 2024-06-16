@@ -5,14 +5,15 @@
 
     @include($module.'includes.breadcrumb',['breadcrumb_image'=> 'background_action.jpeg'])
 
-{{--    <h2 class="fs-15 text-dark mb-0">We found <span class="text-primary">{{ count($data['rows']) }}</span> blogs--}}
-{{--        for you--}}
-{{--    </h2>--}}
-
     <section class="blog-page blog-page--sidebar blog-page--sidebar-list section-space">
         <div class="container">
             <div class="row gutter-y-60">
                 <div class="col-lg-8">
+                    <div class="product__info-top">
+                        <div class="product__showing-text-box">
+                            <p class="product__showing-text">Showing {{ count($data['rows']) }} Results</p>
+                        </div>
+                    </div>
                     <div class="row gutter-y-40">
                         @foreach( $data['rows']  as $index=>$row)
                             <div class="col-md-6 col-lg-6 d-flex align-items-stretch">
