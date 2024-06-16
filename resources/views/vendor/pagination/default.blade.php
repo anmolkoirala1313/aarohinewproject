@@ -2,7 +2,7 @@
 
 @if ($paginator->hasPages())
 
-<ul class="list-nav flex-item-center gap-8">
+<ul class="post-pagination flex-item-center gap-8">
 
 
     @if ($paginator->onFirstPage())

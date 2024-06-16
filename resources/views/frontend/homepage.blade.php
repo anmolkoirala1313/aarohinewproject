@@ -1026,7 +1026,7 @@
                                     <p class="blog-card__text">{{ elipsis(strip_tags($blog->description ?? '')) }}</p>
                                 </div>
                                 <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#"><i class="icon-clipboard"></i> {{ $blog->blogCategory->title ?? '' }}</a></li>
+                                    <li><a href="{{ route($base_route.'category',$blog->blogCategory->slug) }}"><i class="icon-clipboard"></i> {{ $blog->blogCategory->title ?? '' }}</a></li>
     {{--                                <li><a href="#"><i class="icon-comment"></i> 2 Comments</a></li>--}}
                                 </ul>
                             </div>

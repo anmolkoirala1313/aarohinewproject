@@ -1047,7 +1047,7 @@ p {
   flex-wrap: wrap;
   gap: 11px;
 }
-.post-pagination a {
+.post-pagination a, .post-pagination span.page-link {
   display: flex;
   width: 40px;
   height: 40px;
@@ -1062,6 +1062,12 @@ p {
   line-height: 1;
   border: 1px solid transparent;
   transition: all 400ms ease;
+}
+.post-pagination .active span.page-link{
+    color: var(--bs-pagination-disabled-color);
+    pointer-events: none;
+    background-color: var(--bs-pagination-disabled-bg);
+    border-color: var(--bs-pagination-disabled-border-color);
 }
 .post-pagination a span {
   font-size: 14.767px;

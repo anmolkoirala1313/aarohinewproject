@@ -40,7 +40,7 @@ class BlogController extends BackendBaseController
         $this->page_method      = 'index';
         $this->page_title       = 'All '.$this->page;
         $data                   = $this->getCommonData();
-        $data['rows']           = $this->model->active()->descending()->paginate(4);
+        $data['rows']           = $this->model->active()->descending()->paginate(2);
 
         if(!$data['rows']){
             abort(404);

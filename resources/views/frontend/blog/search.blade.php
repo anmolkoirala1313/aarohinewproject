@@ -9,42 +9,47 @@
 {{--        for you--}}
 {{--    </h2>--}}
 
-    <div class="blog-list mt-100 mb-100">
+    <section class="blog-page blog-page--sidebar blog-page--sidebar-list section-space">
         <div class="container">
-            <div class="row row-gap-40">
-                <div class="col-12 col-lg-8 flex-column row-gap-40">
-                    <div class="row">
+            <div class="row gutter-y-60">
+                <div class="col-lg-8">
+                    <div class="row gutter-y-40">
                         @foreach( $data['rows']  as $index=>$row)
-                            <div class="blog-item col-12 col-xl-6 d-flex align-items-stretch col-sm-6 {{ $index > 1 ? 'mt-3':'' }}" data-name="">
-                                <a class="blog-item-main" href="{{ route('frontend.blog.show', $row->slug) }}">
-                                    <div class="bg-img w-100 overflow-hidden mb-minus-1">
-                                        <img class="w-100 h-100 display-block lazy" data-src="{{ asset(imagePath($row->image))}}" alt=""/>
+                            <div class="col-md-6 col-lg-6 d-flex align-items-stretch">
+                                <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                                    <div class="blog-card__image">
+                                        <img data-src="{{ asset(imagePath($row->image))}}" alt="" class="lazy">
+                                        <a href="{{ route('frontend.blog.show', $row->slug) }}" class="blog-card__image__link">
+                                            <span class="sr-only">{{ $row->title ?? '' }}</span>
+                                            <!-- /.sr-only --></a>
                                     </div>
-                                    <div class="infor bg-white p-24">
-                                        <div class="date flex-item-center gap-16 mt-8">
-                                            <div class="item-date flex-item-center"><i class="ph-bold ph-calendar-blank"></i>
-                                                <span class="ml-4 caption2">{{date('d M Y', strtotime($row->created_at))}}</span>
-                                            </div>
-                                            <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">{{ $row->blogCategory->title ?? '' }}</div>
-
-                                        </div>
-                                        <div class="heading6 mt-8">{{ $row->title ?? '' }}</div>
+                                    <div class="blog-card__date">
+                                        <span class="blog-card__date__day">{{date('d M', strtotime($row->created_at))}}</span>
+                                        <span class="blog-card__date__month">{{date('Y', strtotime($row->created_at))}}</span>
+                                    </div><!-- /.blog-card__date -->
+                                    <div class="blog-card__content">
+                                        <h3 class="blog-card__title"><a href="{{ route('frontend.blog.show', $row->slug) }}">
+                                                {{ $row->title ?? '' }}
+                                            </a></h3>
+                                        <p class="blog-card__text">{{ elipsis(strip_tags($row->description ?? '')) }}</p>
                                     </div>
-                                </a>
+                                    <ul class="list-unstyled blog-card__meta">
+                                        <li><a href="{{ route($base_route.'category',$row->blogCategory->slug) }}"><i class="icon-clipboard"></i> {{ $row->blogCategory->title ?? '' }}</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         @endforeach
-                    </div>
-                    <div class="pagination">
-                        {{ $data['rows']->links('vendor.pagination.default') }}
+                        <div class="col-12">
+                            {{ $data['rows']->links('vendor.pagination.default') }}
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 pl-55">
+                <div class="col-lg-4">
                     @include($view_path.'includes.sidebar')
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
 @endsection
 @section('js')
